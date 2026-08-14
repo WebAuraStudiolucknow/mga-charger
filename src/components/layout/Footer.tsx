@@ -8,18 +8,23 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">MGA Electronics</h3>
-            <p className="mb-6 leading-relaxed text-sm">
+            <h3 className="text-2xl font-bold text-white mb-4">MGA Electronics</h3>
+            <p className="mb-4 leading-relaxed text-sm">
               Advanced battery chargers and power solutions engineered for automotive, industrial and energy applications since 2002.
             </p>
-            <div className="space-y-4 text-sm">
+            <div className="mb-6 space-y-1 text-xs text-white/90 bg-white/5 p-3 rounded-lg border border-white/10">
+              <div><strong className="text-accent">GSTIN:</strong> 09AFOPG9627E1Z4</div>
+              <div><strong className="text-accent">Est. Year:</strong> 2002</div>
+              <div><strong className="text-accent">Quality:</strong> ISO 9001:2015 Certified</div>
+            </div>
+            <div className="space-y-3 text-sm">
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-accent mr-3 mt-0.5 shrink-0" />
                 <span>Lucknow, Uttar Pradesh, India</span>
               </div>
               <div className="flex items-center hover:text-white transition-colors">
                 <Phone className="w-5 h-5 text-accent mr-3 shrink-0" />
-                <a href="tel:+917499394690">+91-7499394690</a>
+                <a href="tel:+917499394690">+91-7499394690, +91-9076731251</a>
               </div>
               <div className="flex items-center hover:text-white transition-colors">
                 <Mail className="w-5 h-5 text-accent mr-3 shrink-0" />

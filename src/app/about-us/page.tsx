@@ -15,7 +15,7 @@ export default function AboutPage() {
       <section className="relative py-24 lg:py-32 bg-secondary-bg overflow-hidden">
         <div className="absolute right-0 top-0 w-1/2 h-full hidden lg:block">
           <Image
-            src="/extracted_assets/2724080721381939xgdg.jpg.jpeg"
+            src="/images/about-facility.png"
             alt="MGA Electronics Facility"
             fill
             className="object-cover"

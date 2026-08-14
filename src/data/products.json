@@ -4,17 +4,30 @@
     "name": "ACTIVE 12 VOLT 12 AMP",
     "category": "automotive",
     "categoryName": "Automotive Battery Chargers",
-    "shortDescription": "Reliable 12V 12A charger for standard automotive batteries.",
-    "description": "The ACTIVE 12 VOLT 12 AMP is a heavy-duty charger designed for everyday automotive use. It provides a steady 12A output, ensuring your vehicle's battery is charged safely and efficiently without overheating.",
-    "image": "/products/ACTIVE-12-VOLT-12-AMP.jpeg",
-    "gallery": ["/products/ACTIVE-12-VOLT-12-AMP.jpeg"],
+    "shortDescription": "Reliable 12V 12A constant current charger for standard automotive & lead-acid batteries.",
+    "description": "The ACTIVE 12 VOLT 12 AMP is a heavy-duty charger engineered for automotive workshops and fleet maintenance. Featuring 100% electrolytic copper winding transformer and heavy-gauge steel casing, it provides a steady 12A constant current output for 30Ah to 150Ah batteries.",
+    "image": "/products/prod_active_12v.png",
+    "gallery": ["/products/prod_active_12v.png"],
     "slug": "active-12-volt-12-amp",
     "specifications": [
-      { "label": "Output Current", "value": "12A" },
+      { "label": "Type", "value": "Automotive Battery Charger" },
+      { "label": "Brand", "value": "MGA Zip / MGA Electronics" },
+      { "label": "Battery Type", "value": "Tubular & Flat Plate Lead-Acid" },
+      { "label": "Output Current", "value": "12 Amp Constant Current" },
       { "label": "Output Voltage", "value": "12V DC" },
-      { "label": "Input Voltage", "value": "230V AC" }
+      { "label": "Input Voltage", "value": "230V AC ±10%, 50Hz" },
+      { "label": "Winding", "value": "100% High-Purity Copper Winding" },
+      { "label": "Color & Finish", "value": "Semen Grey Industrial Powder Coated" },
+      { "label": "Country of Origin", "value": "Made in India" },
+      { "label": "Warranty", "value": "1 Year OEM Warranty" }
     ],
-    "features": ["Analog ammeter", "Overload protection", "Portable design"],
+    "features": [
+      "Analog precision ammeter gauge",
+      "Overload protection & automatic thermal cutout",
+      "Fast pulse desulphation technology",
+      "Heavy copper clamp cables",
+      "Zero volt battery recovery support"
+    ],
     "featured": true
   },
   {
@@ -22,16 +35,30 @@
     "name": "Automatic Batteries Charger",
     "category": "industrial",
     "categoryName": "Industrial Battery Chargers",
-    "shortDescription": "Fully automatic charger for industrial battery maintenance.",
-    "description": "Designed for industrial applications, this automatic charger features smart voltage sensing and multi-stage charging to prolong battery life in demanding environments.",
-    "image": "/products/Automatic-Batteries-Charger.jpeg",
-    "gallery": ["/products/Automatic-Batteries-Charger.jpeg"],
+    "shortDescription": "Smart fully automatic multi-stage charger for industrial battery maintenance.",
+    "description": "Engineered for demanding industrial environments, this automatic charger features smart voltage sensing, auto-cutoff, and float maintenance mode to prolong battery life for 1 to 10 battery banks.",
+    "image": "/products/prod_automatic_charger.png",
+    "gallery": ["/products/prod_automatic_charger.png"],
     "slug": "automatic-batteries-charger",
     "specifications": [
-      { "label": "Type", "value": "Fully Automatic" },
-      { "label": "Cooling", "value": "Fan Cooled" }
+      { "label": "Type", "value": "Fully Automatic Boost / Float Charger" },
+      { "label": "Brand", "value": "MGA Electronics" },
+      { "label": "Battery Type", "value": "Tubular, Gel & Sealed Lead-Acid" },
+      { "label": "Output Current", "value": "3A, 6A, 9A, 12A, 15A Selectable" },
+      { "label": "Output Voltage", "value": "Max 180V DC Running Condition" },
+      { "label": "Input Voltage", "value": "230V AC Single Phase / 360V Double Phase" },
+      { "label": "Cooling", "value": "Forced Air Fan Cooled" },
+      { "label": "Color & Finish", "value": "Industrial Semen Grey" },
+      { "label": "Country of Origin", "value": "Made in India" },
+      { "label": "Warranty", "value": "1 Year OEM Warranty" }
     ],
-    "features": ["Auto-cutoff", "Digital indicators", "Reverse polarity protection"],
+    "features": [
+      "Automatic AC voltage adjustment (1 to 10 batteries)",
+      "Smart auto-cutoff once 100% charge is reached",
+      "Reverse polarity & short circuit protection",
+      "Reduces battery sulphation & softens plates",
+      "Zero supervision required during charging"
+    ],
     "featured": true
   },
   {
@@ -39,16 +66,30 @@
     "name": "BIG BOSS 30",
     "category": "power-supply",
     "categoryName": "Power Supply",
-    "shortDescription": "High capacity 30A charger for heavy-duty requirements.",
-    "description": "The BIG BOSS 30 delivers serious power. With a 30 Amp output capacity, it is designed for large battery banks and heavy commercial vehicles where fast charging is essential.",
-    "image": "/products/BIG-BOSS-30.jpeg",
-    "gallery": ["/products/BIG-BOSS-30.jpeg"],
+    "shortDescription": "High capacity 30A commercial charger & power supply for heavy-duty battery banks.",
+    "description": "The BIG BOSS 30 delivers 30 Amps of continuous current. Designed for large commercial fleet battery banks, trucks, tractors, and heavy machinery where rapid boost charging is essential.",
+    "image": "/products/prod_big_boss_30.png",
+    "gallery": ["/products/prod_big_boss_30.png"],
     "slug": "big-boss-30",
     "specifications": [
-      { "label": "Output Current", "value": "30A" },
-      { "label": "Application", "value": "Commercial / Heavy Duty" }
+      { "label": "Type", "value": "Heavy-Duty Boost Charger & Power Supply" },
+      { "label": "Brand", "value": "MGA Electronics" },
+      { "label": "Part Number", "value": "BIG BOSS 30" },
+      { "label": "Charge Current", "value": "30 Amp High Current Output" },
+      { "label": "Output Voltage", "value": "12V / 24V / 48V DC" },
+      { "label": "Batteries Charged", "value": "1 to 10 Batteries (30Ah to 200Ah+)" },
+      { "label": "Enclosure", "value": "Heavy Gauge Steel Powder Coated" },
+      { "label": "Color", "value": "Semen Grey" },
+      { "label": "Country of Origin", "value": "Made in India" },
+      { "label": "Warranty", "value": "1 Year OEM Warranty" }
     ],
-    "features": ["Heavy-duty transformer", "Rugged metal casing", "High heat dissipation"],
+    "features": [
+      "Heavy-duty copper transformer",
+      "High heat dissipation with fan cooling",
+      "Constant current boost charging technology",
+      "Zero Volt battery charging starts in 7 seconds",
+      "Rugged metal casing for workshop durability"
+    ],
     "featured": true
   },
   {
@@ -56,16 +97,28 @@
     "name": "Battery Load Tester BIG",
     "category": "testing",
     "categoryName": "Testing Equipment",
-    "shortDescription": "Professional grade load tester for large capacity batteries.",
-    "description": "Accurately diagnose battery health under load with our professional load tester. Essential for workshops and battery retailers to verify performance.",
-    "image": "/products/Battery-Load-Tester-BIG.jpeg",
-    "gallery": ["/products/Battery-Load-Tester-BIG.jpeg"],
+    "shortDescription": "Professional industrial battery load tester for up to 200Ah batteries.",
+    "description": "Accurately test and diagnose battery state-of-health, internal resistance, and cranking load capacity under real load conditions. Essential diagnostic equipment for automotive workshops, battery dealers, and fleet operators.",
+    "image": "/products/prod_battery_tester.png",
+    "gallery": ["/products/prod_battery_tester.png"],
     "slug": "battery-load-tester-big",
     "specifications": [
-      { "label": "Testing Range", "value": "Up to 200Ah" },
-      { "label": "Display", "value": "Analog Dial" }
+      { "label": "Type", "value": "Industrial Battery Load Tester" },
+      { "label": "Brand", "value": "MGA Electronics" },
+      { "label": "Testing Range", "value": "30Ah to 200Ah Lead-Acid & Tubular" },
+      { "label": "Display", "value": "High-Precision Analog Dial Meter" },
+      { "label": "Clamps", "value": "Heavy-Duty Electrolytic Copper Clamps" },
+      { "label": "Testing Voltage", "value": "6V / 12V DC System" },
+      { "label": "Country of Origin", "value": "Made in India" },
+      { "label": "Warranty", "value": "1 Year OEM Warranty" }
     ],
-    "features": ["Heavy copper clamps", "Instant health readout", "Durable construction"],
+    "features": [
+      "Instant 10-second pass/fail load readout",
+      "Heavy insulated copper clamps & thick cables",
+      "Durable steel enclosure with ventilation",
+      "Tests starter motor load & alternator output",
+      "Prevents false warranty replacements"
+    ],
     "featured": true
   },
   {
@@ -73,16 +126,32 @@
     "name": "Big Boss Titanium 15A",
     "category": "automotive",
     "categoryName": "Automotive Battery Chargers",
-    "shortDescription": "Premium 15A charger with titanium-grade durability.",
-    "description": "The Titanium series offers enhanced durability and sustained 15A performance. Ideal for fleet operators and busy workshops requiring continuous operation.",
-    "image": "/products/Big-Boss-Titanium-15A.jpeg",
-    "gallery": ["/products/Big-Boss-Titanium-15A.jpeg"],
+    "shortDescription": "India's best Titanium series 15A boost charger with Fast Pulse desulphation technology.",
+    "description": "The BIG BOSS Titanium sets AC voltage automatically with zero manual setting required when charging 1 to 10 batteries. Built with Fast Pulse Technology, it softens battery plates and removes sulphation for maximum battery cure percentage.",
+    "image": "/products/prod_big_boss_titanium.png",
+    "gallery": ["/products/prod_big_boss_titanium.png"],
     "slug": "big-boss-titanium-15a",
     "specifications": [
-      { "label": "Output Current", "value": "15A" },
-      { "label": "Series", "value": "Titanium" }
+      { "label": "Type", "value": "Automatic Boost Battery Charger" },
+      { "label": "Brand", "value": "MGA Zip / MGA Electronics" },
+      { "label": "Model No.", "value": "Big Boss Titanium" },
+      { "label": "Part Number", "value": "Big BOSS TT" },
+      { "label": "Battery Type", "value": "Tubular, Flat Plate & Lead Acid" },
+      { "label": "Batteries Charged", "value": "1 to 10 Batteries Simultaneously" },
+      { "label": "Output Voltage", "value": "Max 180V (Single Phase) / 360V (Double Phase)" },
+      { "label": "Charge Current", "value": "3, 6, 9, 12, 15 & 18 Amp Selectable" },
+      { "label": "Charger Type", "value": "Analog Precision Meter" },
+      { "label": "Color", "value": "Semen Grey" },
+      { "label": "Country of Origin", "value": "Made in India" },
+      { "label": "Warranty", "value": "1 Year OEM Warranty" }
     ],
-    "features": ["Premium build quality", "Thermal protection", "Consistent output"],
+    "features": [
+      "Zero Volt battery charging starts in 7 seconds",
+      "Sets AC voltage automatically for 1 to 10 batteries",
+      "Fast Pulse desulphation softens plates & cures batteries",
+      "Constant current supply under all voltage fluctuations",
+      "Suitable for cars, jeeps, tractors, trucks & generators"
+    ],
     "featured": true
   },
   {
@@ -90,16 +159,28 @@
     "name": "Car Battery Charger",
     "category": "automotive",
     "categoryName": "Automotive Battery Chargers",
-    "shortDescription": "Standard universal car battery charger.",
-    "description": "A versatile and reliable charger for all standard car batteries. User-friendly and safe for home garage use.",
-    "image": "/products/Car-Battery-Charger.jpeg",
-    "gallery": ["/products/Car-Battery-Charger.jpeg"],
+    "shortDescription": "Universal 12V automotive battery charger for cars, jeeps, and light commercial vehicles.",
+    "description": "A versatile and reliable constant-current charger for standard 12V car batteries. Lightweight, compact, and wall-mountable with clear analog ammeter display.",
+    "image": "/products/prod_car_charger.png",
+    "gallery": ["/products/prod_car_charger.png"],
     "slug": "car-battery-charger",
     "specifications": [
-      { "label": "Application", "value": "Passenger Cars" },
-      { "label": "Voltage", "value": "12V" }
+      { "label": "Type", "value": "Universal Car Battery Charger" },
+      { "label": "Brand", "value": "MGA Zip" },
+      { "label": "Application", "value": "Passenger Cars, Jeeps, Small Commercial" },
+      { "label": "Output Voltage", "value": "12V DC" },
+      { "label": "Output Current", "value": "6A to 12A Output" },
+      { "label": "Transformer", "value": "100% Copper Winding" },
+      { "label": "Color", "value": "Semen Grey" },
+      { "label": "Country of Origin", "value": "Made in India" },
+      { "label": "Warranty", "value": "1 Year OEM Warranty" }
     ],
-    "features": ["Easy clamp connection", "Compact footprint", "Clear status indicators"],
+    "features": [
+      "Wall mountable space-saving design",
+      "Short circuit & overload protection fuse",
+      "Heavy duty insulated clamp leads",
+      "Clear meter status indicators"
+    ],
     "featured": true
   },
   {
@@ -107,16 +188,28 @@
     "name": "ECO 18 Multy",
     "category": "industrial",
     "categoryName": "Industrial Chargers",
-    "shortDescription": "Multi-battery charging station for efficient workshop operations.",
-    "description": "The ECO 18 Multy allows charging multiple batteries simultaneously. Perfect for service centers and battery retailers who need to handle high volumes efficiently.",
-    "image": "/products/ECO-18-Multy.jpeg",
-    "gallery": ["/products/ECO-18-Multy.jpeg"],
+    "shortDescription": "Multi-battery series/parallel charging station for busy workshops & service centers.",
+    "description": "The ECO 18 Multy is designed for charging up to 10 batteries simultaneously in series or parallel. Ideal for battery service centers, garages, and commercial charging stations requiring high turnover.",
+    "image": "/products/prod_big_boss_30.png",
+    "gallery": ["/products/prod_big_boss_30.png"],
     "slug": "eco-18-multy",
     "specifications": [
-      { "label": "Capacity", "value": "Multiple Batteries" },
-      { "label": "Type", "value": "Series/Parallel Charger" }
+      { "label": "Type", "value": "Multi-Battery Charging Station" },
+      { "label": "Brand", "value": "MGA Electronics" },
+      { "label": "Batteries Charged", "value": "1 to 10 Batteries (Series/Parallel)" },
+      { "label": "Output Voltage", "value": "Max 180V DC Output" },
+      { "label": "Current Output", "value": "3A, 6A, 9A, 12A, 15A, 18A" },
+      { "label": "Charger Type", "value": "Analog Duty Charger" },
+      { "label": "Color", "value": "Semen Grey" },
+      { "label": "Country of Origin", "value": "Made in India" },
+      { "label": "Warranty", "value": "1 Year OEM Warranty" }
     ],
-    "features": ["Multi-channel output", "Space-saving design", "Individual channel monitoring"],
+    "features": [
+      "Multi-channel battery charging support",
+      "Fast pulse desulphation technology",
+      "Automatic AC voltage adjustment",
+      "Individual fuse protection per line"
+    ],
     "featured": true
   },
   {
@@ -124,16 +217,25 @@
     "name": "ECO-9 Mini",
     "category": "automotive",
     "categoryName": "Automotive Battery Chargers",
-    "shortDescription": "Compact 9A charger for smaller vehicles and personal use.",
-    "description": "The ECO-9 Mini offers a powerful 9A charge in a highly portable and compact design. Great for two-wheelers and small cars.",
-    "image": "/products/ECO-9-Mini.jpeg",
-    "gallery": ["/products/ECO-9-Mini.jpeg"],
+    "shortDescription": "Compact 9A charger for two-wheelers, small cars, and personal garages.",
+    "description": "The ECO-9 Mini delivers a steady 9A constant current charge in an ultra-compact, portable metal casing. Perfect for 2-wheeler workshops and small vehicle battery maintenance.",
+    "image": "/products/prod_active_12v.png",
+    "gallery": ["/products/prod_active_12v.png"],
     "slug": "eco-9-mini",
     "specifications": [
-      { "label": "Output", "value": "9A" },
-      { "label": "Form Factor", "value": "Mini / Portable" }
+      { "label": "Type", "value": "Mini Portable Battery Charger" },
+      { "label": "Brand", "value": "MGA Zip" },
+      { "label": "Output Current", "value": "9A Constant Current" },
+      { "label": "Voltage", "value": "12V DC" },
+      { "label": "Color", "value": "Semen Grey" },
+      { "label": "Country of Origin", "value": "Made in India" },
+      { "label": "Warranty", "value": "1 Year OEM Warranty" }
     ],
-    "features": ["Ultra-compact", "Lightweight", "High efficiency"],
+    "features": [
+      "Ultra-compact & portable metal chassis",
+      "Low power consumption & high efficiency",
+      "Overload & thermal cutout switch"
+    ],
     "featured": true
   },
   {
@@ -141,16 +243,25 @@
     "name": "Intelligent Hawk",
     "category": "ev",
     "categoryName": "EV Chargers",
-    "shortDescription": "Smart microprocessor-controlled charger for advanced battery chemistries.",
-    "description": "The Intelligent Hawk utilizes advanced microprocessor control to deliver precise charging profiles, making it ideal for modern EVs and specialized battery types.",
-    "image": "/products/Intelligent-Hawk.jpeg",
-    "gallery": ["/products/Intelligent-Hawk.jpeg"],
+    "shortDescription": "Microprocessor-controlled smart charger for EV battery packs & Li-ion / Lead-Acid chemistries.",
+    "description": "The Intelligent Hawk uses advanced microprocessor control algorithms to deliver precise multi-stage charging curves for 2-wheeler, 3-wheeler, and 4-wheeler electric vehicle battery packs.",
+    "image": "/products/prod_automatic_charger.png",
+    "gallery": ["/products/prod_automatic_charger.png"],
     "slug": "intelligent-hawk",
     "specifications": [
-      { "label": "Control", "value": "Microprocessor" },
-      { "label": "Compatibility", "value": "Lead-Acid / Li-ion" }
+      { "label": "Type", "value": "Smart Microprocessor EV Charger" },
+      { "label": "Brand", "value": "MGA Electronics" },
+      { "label": "Chemistry", "value": "Li-ion / LFP & Lead-Acid Compatible" },
+      { "label": "Control", "value": "Microprocessor Smart Profile" },
+      { "label": "Display", "value": "Digital LCD Display Panel" },
+      { "label": "Country of Origin", "value": "Made in India" },
+      { "label": "Warranty", "value": "1 Year OEM Warranty" }
     ],
-    "features": ["Smart charging curve", "Digital LCD display", "Complete electrical protection"],
+    "features": [
+      "Custom programmed charging profiles",
+      "Digital voltage & current readout",
+      "Over-voltage & thermal shutdown protection"
+    ],
     "featured": true
   },
   {
@@ -158,16 +269,25 @@
     "name": "PRINCE Battery Chargers",
     "category": "inverter",
     "categoryName": "Inverter Chargers",
-    "shortDescription": "Dependable charging solutions for inverter battery systems.",
-    "description": "The PRINCE series provides reliable and steady charging specifically tailored for deep-cycle inverter batteries used in home and office backups.",
-    "image": "/products/PRINCE-Battery-Chargers.jpeg",
-    "gallery": ["/products/PRINCE-Battery-Chargers.jpeg"],
+    "shortDescription": "Heavy-duty charger for deep-cycle tubular inverter battery banks.",
+    "description": "The PRINCE series provides reliable, steady charging engineered specifically for deep-cycle tubular and flat plate inverter batteries used in home, office, and telecom backup systems.",
+    "image": "/products/prod_big_boss_titanium.png",
+    "gallery": ["/products/prod_big_boss_titanium.png"],
     "slug": "prince-battery-chargers",
     "specifications": [
-      { "label": "Application", "value": "Tubular / Flat Plate Batteries" },
-      { "label": "Voltage", "value": "12V / 24V" }
+      { "label": "Type", "value": "Inverter Battery Charger" },
+      { "label": "Brand", "value": "MGA Zip" },
+      { "label": "Application", "value": "Tubular & Deep-Cycle Inverter Batteries" },
+      { "label": "Voltage", "value": "12V / 24V DC" },
+      { "label": "Color", "value": "Semen Grey" },
+      { "label": "Country of Origin", "value": "Made in India" },
+      { "label": "Warranty", "value": "1 Year OEM Warranty" }
     ],
-    "features": ["Deep-cycle optimized", "Low heat generation", "Long-lasting components"],
+    "features": [
+      "Optimized for deep-cycle tubular batteries",
+      "Low heat generation with copper transformer",
+      "Automatic trickle float maintenance mode"
+    ],
     "featured": true
   },
   {
@@ -175,16 +295,25 @@
     "name": "Power 12 Volt 12 Amp",
     "category": "power-supply",
     "categoryName": "Power Supply",
-    "shortDescription": "Stable 12V 12A power supply and charging unit.",
-    "description": "A versatile unit that can serve both as a steady 12V power supply for testing equipment and as a reliable 12A battery charger.",
-    "image": "/products/Power-12-Volt-12-Amp.jpeg",
-    "gallery": ["/products/Power-12-Volt-12-Amp.jpeg"],
+    "shortDescription": "Dual-mode 12V 12A regulated DC power supply and battery charging unit.",
+    "description": "A versatile dual-purpose unit that functions as a clean regulated 12V DC bench power supply for electronic testing and as a 12A constant current battery charger.",
+    "image": "/products/prod_active_12v.png",
+    "gallery": ["/products/prod_active_12v.png"],
     "slug": "power-12-volt-12-amp",
     "specifications": [
-      { "label": "Mode", "value": "Power Supply / Charger" },
-      { "label": "Output", "value": "12V 12A" }
+      { "label": "Type", "value": "Regulated Power Supply & Charger" },
+      { "label": "Brand", "value": "MGA Electronics" },
+      { "label": "Mode", "value": "Dual Mode (Power Supply / Charger)" },
+      { "label": "Output", "value": "12V 12A Clean DC Output" },
+      { "label": "Color", "value": "Semen Grey" },
+      { "label": "Country of Origin", "value": "Made in India" },
+      { "label": "Warranty", "value": "1 Year OEM Warranty" }
     ],
-    "features": ["Dual functionality", "Clean DC output", "Short circuit protection"],
+    "features": [
+      "Dual functionality mode selector switch",
+      "Clean low-ripple DC output voltage",
+      "Short circuit & overload protection fuse"
+    ],
     "featured": true
   },
   {
@@ -192,16 +321,25 @@
     "name": "Automatic Battery Charger (Standard)",
     "category": "industrial",
     "categoryName": "Industrial Battery Chargers",
-    "shortDescription": "Standard automatic charging system for general industrial use.",
-    "description": "A robust, set-and-forget automatic charger that ensures industrial batteries are always ready without the risk of overcharging.",
-    "image": "/products/automatic-Battery-Charger.jpeg",
-    "gallery": ["/products/automatic-Battery-Charger.jpeg"],
+    "shortDescription": "Standard industrial automatic boost/float charger box.",
+    "description": "A robust, set-and-forget industrial automatic charger designed to maintain generator starting batteries, substation backup banks, and factory equipment batteries.",
+    "image": "/products/prod_automatic_charger.png",
+    "gallery": ["/products/prod_automatic_charger.png"],
     "slug": "automatic-battery-charger-standard",
     "specifications": [
-      { "label": "Type", "value": "Automatic Float/Boost" },
-      { "label": "Enclosure", "value": "Industrial Grade Steel" }
+      { "label": "Type", "value": "Industrial Automatic Charger" },
+      { "label": "Brand", "value": "MGA Electronics" },
+      { "label": "Type", "value": "Automatic Boost & Float Charge" },
+      { "label": "Enclosure", "value": "Heavy Powder Coated Steel" },
+      { "label": "Color", "value": "Semen Grey" },
+      { "label": "Country of Origin", "value": "Made in India" },
+      { "label": "Warranty", "value": "1 Year OEM Warranty" }
     ],
-    "features": ["Float mode maintenance", "Automatic boost charging", "LED status indicators"],
+    "features": [
+      "Set-and-forget automatic float mode",
+      "Built-in overcharge protection sensors",
+      "LED status indicator lights & ammeter"
+    ],
     "featured": true
   }
 ]

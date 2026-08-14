@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { TopBar } from "./TopBar";
@@ -40,8 +41,15 @@ export function Header() {
         )}
       >
         <div className="max-w-[1280px] xl:max-w-[1400px] mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold tracking-tight shrink-0">
-            MGA<span className="text-accent">Electronics</span>
+          <Link href="/" className="flex items-center shrink-0 py-1 focus:outline-none border-none outline-none">
+            <Image
+              src="/logo.png"
+              alt="MGA Electronics Logo"
+              width={180}
+              height={50}
+              className="h-10 sm:h-12 w-auto object-contain"
+              priority
+            />
           </Link>
 
           <nav className="hidden lg:flex h-full items-center">
@@ -60,7 +68,7 @@ export function Header() {
                     >
                       <button
                         className={cn(
-                          "text-sm font-medium transition-colors flex items-center h-full",
+                          "text-sm font-medium transition-colors flex items-center h-full outline-none focus:outline-none",
                           isActive ? "text-accent font-semibold" : "text-primary-text hover:text-accent"
                         )}
                         onClick={() => setIsMegaMenuOpen(!isMegaMenuOpen)}
@@ -79,7 +87,7 @@ export function Header() {
                     <Link
                       href={item.href}
                       className={cn(
-                        "text-sm font-medium transition-colors h-full flex items-center relative",
+                        "text-sm font-medium transition-colors h-full flex items-center relative outline-none focus:outline-none",
                         isActive ? "text-accent font-semibold" : "text-primary-text hover:text-accent"
                       )}
                     >

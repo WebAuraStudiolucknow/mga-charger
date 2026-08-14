@@ -62,7 +62,7 @@ export function AboutPreview() {
           )}>
             <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl border border-border/50">
               <Image
-                src="/products/Battery-Load-Tester-BIG.jpeg"
+                src="/images/about-facility.png"
                 alt="MGA Electronics Manufacturing Facility"
                 fill
                 className={cn(

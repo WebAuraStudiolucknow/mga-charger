@@ -6,7 +6,7 @@ import { ChevronRight, Calendar, User, ArrowLeft } from "lucide-react";
 import { blogs } from "@/data/blogs";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -16,7 +16,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const blog = blogs.find((b) => b.slug === params.slug);
+  const { slug } = await params;
+  const blog = blogs.find((b) => b.slug === slug);
   if (!blog) return { title: "Article Not Found" };
 
   return {
@@ -25,8 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function BlogDetailPage({ params }: Props) {
-  const blog = blogs.find((b) => b.slug === params.slug);
+export default async function BlogDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const blog = blogs.find((b) => b.slug === slug);
 
   if (!blog) {
     notFound();

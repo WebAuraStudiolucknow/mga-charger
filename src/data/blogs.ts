@@ -6,7 +6,7 @@ export const blogs = [
     date: "Nov 02, 2023",
     category: "Technology",
     author: "Technical Support",
-    image: "/extracted_assets/2724080721381939xgdg.jpg.jpeg",
+    image: "/products/hero-slide-1.png",
     slug: "smps-vs-linear-chargers"
   },
   {
@@ -16,7 +16,7 @@ export const blogs = [
     date: "Dec 12, 2023",
     category: "Maintenance",
     author: "Service Department",
-    image: "/extracted_assets/2724080724187406bcb.jpg.jpeg",
+    image: "/images/about-facility.png",
     slug: "industrial-charger-maintenance"
   },
   {
@@ -26,7 +26,7 @@ export const blogs = [
     date: "Jan 20, 2024",
     category: "Industry Trends",
     author: "Product Strategy",
-    image: "/extracted_assets/2724080757216503xvdgsdg.jpg.jpeg",
+    image: "/products/hero-slide-2.png",
     slug: "future-of-ev-charging-india"
   }
 ];

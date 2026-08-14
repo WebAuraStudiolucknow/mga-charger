@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
+import { Chatbot } from "@/components/common/Chatbot";
+import { LoadingProvider } from "@/context/LoadingContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,10 +29,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col font-sans bg-background text-primary-text antialiased selection:bg-accent selection:text-white pb-[60px] lg:pb-0">
-        <Header />
-        <main className="flex-grow flex flex-col">{children}</main>
-        <Footer />
-        <MobileActionBar />
+        <LoadingProvider>
+          <Header />
+          <main className="flex-grow flex flex-col">{children}</main>
+          <Footer />
+          <MobileActionBar />
+          <Chatbot />
+        </LoadingProvider>
       </body>
     </html>
   );
