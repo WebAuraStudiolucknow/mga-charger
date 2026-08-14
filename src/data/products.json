@@ -1,0 +1,207 @@
+[
+  {
+    "id": "1",
+    "name": "ACTIVE 12 VOLT 12 AMP",
+    "category": "automotive",
+    "categoryName": "Automotive Battery Chargers",
+    "shortDescription": "Reliable 12V 12A charger for standard automotive batteries.",
+    "description": "The ACTIVE 12 VOLT 12 AMP is a heavy-duty charger designed for everyday automotive use. It provides a steady 12A output, ensuring your vehicle's battery is charged safely and efficiently without overheating.",
+    "image": "/products/ACTIVE-12-VOLT-12-AMP.jpeg",
+    "gallery": ["/products/ACTIVE-12-VOLT-12-AMP.jpeg"],
+    "slug": "active-12-volt-12-amp",
+    "specifications": [
+      { "label": "Output Current", "value": "12A" },
+      { "label": "Output Voltage", "value": "12V DC" },
+      { "label": "Input Voltage", "value": "230V AC" }
+    ],
+    "features": ["Analog ammeter", "Overload protection", "Portable design"],
+    "featured": true
+  },
+  {
+    "id": "2",
+    "name": "Automatic Batteries Charger",
+    "category": "industrial",
+    "categoryName": "Industrial Battery Chargers",
+    "shortDescription": "Fully automatic charger for industrial battery maintenance.",
+    "description": "Designed for industrial applications, this automatic charger features smart voltage sensing and multi-stage charging to prolong battery life in demanding environments.",
+    "image": "/products/Automatic-Batteries-Charger.jpeg",
+    "gallery": ["/products/Automatic-Batteries-Charger.jpeg"],
+    "slug": "automatic-batteries-charger",
+    "specifications": [
+      { "label": "Type", "value": "Fully Automatic" },
+      { "label": "Cooling", "value": "Fan Cooled" }
+    ],
+    "features": ["Auto-cutoff", "Digital indicators", "Reverse polarity protection"],
+    "featured": true
+  },
+  {
+    "id": "3",
+    "name": "BIG BOSS 30",
+    "category": "power-supply",
+    "categoryName": "Power Supply",
+    "shortDescription": "High capacity 30A charger for heavy-duty requirements.",
+    "description": "The BIG BOSS 30 delivers serious power. With a 30 Amp output capacity, it is designed for large battery banks and heavy commercial vehicles where fast charging is essential.",
+    "image": "/products/BIG-BOSS-30.jpeg",
+    "gallery": ["/products/BIG-BOSS-30.jpeg"],
+    "slug": "big-boss-30",
+    "specifications": [
+      { "label": "Output Current", "value": "30A" },
+      { "label": "Application", "value": "Commercial / Heavy Duty" }
+    ],
+    "features": ["Heavy-duty transformer", "Rugged metal casing", "High heat dissipation"],
+    "featured": true
+  },
+  {
+    "id": "4",
+    "name": "Battery Load Tester BIG",
+    "category": "testing",
+    "categoryName": "Testing Equipment",
+    "shortDescription": "Professional grade load tester for large capacity batteries.",
+    "description": "Accurately diagnose battery health under load with our professional load tester. Essential for workshops and battery retailers to verify performance.",
+    "image": "/products/Battery-Load-Tester-BIG.jpeg",
+    "gallery": ["/products/Battery-Load-Tester-BIG.jpeg"],
+    "slug": "battery-load-tester-big",
+    "specifications": [
+      { "label": "Testing Range", "value": "Up to 200Ah" },
+      { "label": "Display", "value": "Analog Dial" }
+    ],
+    "features": ["Heavy copper clamps", "Instant health readout", "Durable construction"],
+    "featured": true
+  },
+  {
+    "id": "5",
+    "name": "Big Boss Titanium 15A",
+    "category": "automotive",
+    "categoryName": "Automotive Battery Chargers",
+    "shortDescription": "Premium 15A charger with titanium-grade durability.",
+    "description": "The Titanium series offers enhanced durability and sustained 15A performance. Ideal for fleet operators and busy workshops requiring continuous operation.",
+    "image": "/products/Big-Boss-Titanium-15A.jpeg",
+    "gallery": ["/products/Big-Boss-Titanium-15A.jpeg"],
+    "slug": "big-boss-titanium-15a",
+    "specifications": [
+      { "label": "Output Current", "value": "15A" },
+      { "label": "Series", "value": "Titanium" }
+    ],
+    "features": ["Premium build quality", "Thermal protection", "Consistent output"],
+    "featured": true
+  },
+  {
+    "id": "6",
+    "name": "Car Battery Charger",
+    "category": "automotive",
+    "categoryName": "Automotive Battery Chargers",
+    "shortDescription": "Standard universal car battery charger.",
+    "description": "A versatile and reliable charger for all standard car batteries. User-friendly and safe for home garage use.",
+    "image": "/products/Car-Battery-Charger.jpeg",
+    "gallery": ["/products/Car-Battery-Charger.jpeg"],
+    "slug": "car-battery-charger",
+    "specifications": [
+      { "label": "Application", "value": "Passenger Cars" },
+      { "label": "Voltage", "value": "12V" }
+    ],
+    "features": ["Easy clamp connection", "Compact footprint", "Clear status indicators"],
+    "featured": true
+  },
+  {
+    "id": "7",
+    "name": "ECO 18 Multy",
+    "category": "industrial",
+    "categoryName": "Industrial Chargers",
+    "shortDescription": "Multi-battery charging station for efficient workshop operations.",
+    "description": "The ECO 18 Multy allows charging multiple batteries simultaneously. Perfect for service centers and battery retailers who need to handle high volumes efficiently.",
+    "image": "/products/ECO-18-Multy.jpeg",
+    "gallery": ["/products/ECO-18-Multy.jpeg"],
+    "slug": "eco-18-multy",
+    "specifications": [
+      { "label": "Capacity", "value": "Multiple Batteries" },
+      { "label": "Type", "value": "Series/Parallel Charger" }
+    ],
+    "features": ["Multi-channel output", "Space-saving design", "Individual channel monitoring"],
+    "featured": true
+  },
+  {
+    "id": "8",
+    "name": "ECO-9 Mini",
+    "category": "automotive",
+    "categoryName": "Automotive Battery Chargers",
+    "shortDescription": "Compact 9A charger for smaller vehicles and personal use.",
+    "description": "The ECO-9 Mini offers a powerful 9A charge in a highly portable and compact design. Great for two-wheelers and small cars.",
+    "image": "/products/ECO-9-Mini.jpeg",
+    "gallery": ["/products/ECO-9-Mini.jpeg"],
+    "slug": "eco-9-mini",
+    "specifications": [
+      { "label": "Output", "value": "9A" },
+      { "label": "Form Factor", "value": "Mini / Portable" }
+    ],
+    "features": ["Ultra-compact", "Lightweight", "High efficiency"],
+    "featured": true
+  },
+  {
+    "id": "9",
+    "name": "Intelligent Hawk",
+    "category": "ev",
+    "categoryName": "EV Chargers",
+    "shortDescription": "Smart microprocessor-controlled charger for advanced battery chemistries.",
+    "description": "The Intelligent Hawk utilizes advanced microprocessor control to deliver precise charging profiles, making it ideal for modern EVs and specialized battery types.",
+    "image": "/products/Intelligent-Hawk.jpeg",
+    "gallery": ["/products/Intelligent-Hawk.jpeg"],
+    "slug": "intelligent-hawk",
+    "specifications": [
+      { "label": "Control", "value": "Microprocessor" },
+      { "label": "Compatibility", "value": "Lead-Acid / Li-ion" }
+    ],
+    "features": ["Smart charging curve", "Digital LCD display", "Complete electrical protection"],
+    "featured": true
+  },
+  {
+    "id": "10",
+    "name": "PRINCE Battery Chargers",
+    "category": "inverter",
+    "categoryName": "Inverter Chargers",
+    "shortDescription": "Dependable charging solutions for inverter battery systems.",
+    "description": "The PRINCE series provides reliable and steady charging specifically tailored for deep-cycle inverter batteries used in home and office backups.",
+    "image": "/products/PRINCE-Battery-Chargers.jpeg",
+    "gallery": ["/products/PRINCE-Battery-Chargers.jpeg"],
+    "slug": "prince-battery-chargers",
+    "specifications": [
+      { "label": "Application", "value": "Tubular / Flat Plate Batteries" },
+      { "label": "Voltage", "value": "12V / 24V" }
+    ],
+    "features": ["Deep-cycle optimized", "Low heat generation", "Long-lasting components"],
+    "featured": true
+  },
+  {
+    "id": "11",
+    "name": "Power 12 Volt 12 Amp",
+    "category": "power-supply",
+    "categoryName": "Power Supply",
+    "shortDescription": "Stable 12V 12A power supply and charging unit.",
+    "description": "A versatile unit that can serve both as a steady 12V power supply for testing equipment and as a reliable 12A battery charger.",
+    "image": "/products/Power-12-Volt-12-Amp.jpeg",
+    "gallery": ["/products/Power-12-Volt-12-Amp.jpeg"],
+    "slug": "power-12-volt-12-amp",
+    "specifications": [
+      { "label": "Mode", "value": "Power Supply / Charger" },
+      { "label": "Output", "value": "12V 12A" }
+    ],
+    "features": ["Dual functionality", "Clean DC output", "Short circuit protection"],
+    "featured": true
+  },
+  {
+    "id": "12",
+    "name": "Automatic Battery Charger (Standard)",
+    "category": "industrial",
+    "categoryName": "Industrial Battery Chargers",
+    "shortDescription": "Standard automatic charging system for general industrial use.",
+    "description": "A robust, set-and-forget automatic charger that ensures industrial batteries are always ready without the risk of overcharging.",
+    "image": "/products/automatic-Battery-Charger.jpeg",
+    "gallery": ["/products/automatic-Battery-Charger.jpeg"],
+    "slug": "automatic-battery-charger-standard",
+    "specifications": [
+      { "label": "Type", "value": "Automatic Float/Boost" },
+      { "label": "Enclosure", "value": "Industrial Grade Steel" }
+    ],
+    "features": ["Float mode maintenance", "Automatic boost charging", "LED status indicators"],
+    "featured": true
+  }
+]
