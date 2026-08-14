@@ -16,25 +16,37 @@ interface MobileMenuProps {
 export function MobileMenu({ isOpen, onClose, navigation, pathname }: MobileMenuProps) {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
 
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 z-50 lg:hidden">
+    <div
+      className={cn(
+        "fixed inset-0 z-50 lg:hidden transition-all duration-300",
+        isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+      )}
+    >
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200"
+        className={cn(
+          "fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300",
+          isOpen ? "opacity-100" : "opacity-0"
+        )}
         onClick={onClose}
       />
       
-      {/* Menu Panel */}
-      <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl flex flex-col animate-in slide-in-from-right duration-300">
+      {/* Drawer Panel - Smooth Right to Left Slide */}
+      <div 
+        className={cn(
+          "fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl flex flex-col transform transition-transform duration-500 ease-in-out z-10",
+          isOpen ? "translate-x-0" : "translate-x-full"
+        )}
+      >
         <div className="flex items-center justify-between p-6 border-b border-border">
           <Link href="/" className="text-xl font-bold tracking-tight" onClick={onClose}>
             MGA<span className="text-accent">Electronics</span>
           </Link>
           <button
             onClick={onClose}
-            className="p-2 text-secondary-text hover:bg-secondary-bg rounded-full transition-colors"
+            className="p-2 text-secondary-text hover:bg-secondary-bg rounded-full transition-colors cursor-pointer"
+            aria-label="Close menu"
           >
             <X className="w-6 h-6" />
           </button>
@@ -52,7 +64,7 @@ export function MobileMenu({ isOpen, onClose, navigation, pathname }: MobileMenu
                     <button
                       onClick={() => setIsProductsOpen(!isProductsOpen)}
                       className={cn(
-                        "flex items-center justify-between w-full py-3 text-lg font-medium border-b border-border transition-colors",
+                        "flex items-center justify-between w-full py-3 text-lg font-medium border-b border-border transition-colors cursor-pointer",
                         isActive ? "text-accent" : "text-primary-text"
                       )}
                     >
