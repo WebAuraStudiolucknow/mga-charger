@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/products/ProductCard";
+import { BsWhatsapp } from "react-icons/bs";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -174,23 +175,33 @@ export default async function ProductDetailPage({ params }: Props) {
                 </div>
               </div>
 
-              {/* B2B Action Bar: Request Quote & Download Datasheet (NO BUY/CART BUTTONS) */}
-              <div className="pt-6 border-t border-border/80 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              {/* B2B Action Bar: Request Quote, WhatsApp & Download Specs */}
+              <div className="pt-6 border-t border-border/80 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <Link
                   href={`/contact-us?product=${product.slug}`}
-                  className="flex-1 bg-accent text-white px-6 py-4 rounded-xl font-bold hover:bg-accent-dark transition-all duration-300 flex items-center justify-center shadow-lg shadow-accent/25 hover:shadow-xl text-sm sm:text-base group"
+                  className="flex-1 bg-accent text-white px-5 py-3.5 rounded-xl font-bold hover:bg-accent-dark transition-all duration-300 flex items-center justify-center shadow-md shadow-accent/20 text-xs sm:text-sm group"
                 >
-                  <FileText className="w-5 h-5 mr-2.5" />
-                  <span>Request Instant Quote</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <FileText className="w-4 h-4 mr-2" />
+                  <span>Request Quote</span>
+                  <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
+
+                <a
+                  href={`https://wa.me/917499394690?text=Hi%20MGA%20Electronics%2C%20I%20am%20interested%20in%20product%3A%20${encodeURIComponent(product.name)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-[#25D366] hover:bg-[#20ba5a] text-white px-5 py-3.5 rounded-xl font-bold transition-all duration-300 flex items-center justify-center shadow-md shadow-emerald-500/20 text-xs sm:text-sm"
+                >
+                  <BsWhatsapp className="w-4 h-4 mr-2 shrink-0 text-white" />
+                  <span>Chat on WhatsApp</span>
+                </a>
 
                 <Link
                   href="/brochure"
-                  className="flex-1 bg-white text-primary-text border border-border hover:border-accent hover:bg-secondary-bg px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center text-sm sm:text-base shadow-2xs"
+                  className="flex-1 bg-white text-primary-text border border-border hover:border-accent hover:bg-secondary-bg px-5 py-3.5 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center text-xs sm:text-sm shadow-2xs"
                 >
-                  <Download className="w-5 h-5 mr-2 text-accent" />
-                  <span>Download Specs Sheet</span>
+                  <Download className="w-4 h-4 mr-2 text-accent" />
+                  <span>Download Specs</span>
                 </Link>
               </div>
 

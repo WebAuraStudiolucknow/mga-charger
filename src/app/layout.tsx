@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { Chatbot } from "@/components/common/Chatbot";
+import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { LoadingProvider } from "@/context/LoadingContext";
 
 const inter = Inter({
@@ -34,6 +35,7 @@ export default function RootLayout({
           <main className="flex-grow flex flex-col">{children}</main>
           <Footer />
           <MobileActionBar />
+          <WhatsAppButton />
           <Chatbot />
         </LoadingProvider>
       </body>

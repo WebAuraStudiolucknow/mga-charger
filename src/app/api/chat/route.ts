@@ -2,9 +2,10 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
-    const { message } = await req.json();
+    const body = await req.json();
+    const userPrompt = body.message || (Array.isArray(body.messages) ? body.messages[body.messages.length - 1]?.content : "");
 
-    if (!message) {
+    if (!userPrompt) {
       return NextResponse.json({ error: "Message is required" }, { status: 400 });
     }
 
@@ -12,18 +13,17 @@ export async function POST(req: Request) {
 
     if (!apiKey || apiKey === "your_gemini_api_key_here") {
       return NextResponse.json(
-        { 
-          answer: null, 
-          error: "API_KEY_NOT_CONFIGURED" 
-        }, 
+        {
+          reply: "I am MGA Electronics Technical Assistant. For custom specifications, OEM bulk pricing, or technical inquiries, please connect with our team on WhatsApp at +91-7499394690 or email mgacharger@yahoo.com.",
+        },
         { status: 200 }
       );
     }
 
-    const systemInstruction = `You are MGA Assistant, the official AI technical sales agent for MGA Electronics (Established 2002, GSTIN: 09AFOPG9627E1Z4, Lucknow, India).
-MGA manufactures heavy-duty industrial battery chargers, 12V/24V automotive chargers, EV chargers, battery load testers, and custom OEM power supplies.
-Always provide helpful, concise (2-3 sentences), professional answers. 
-For bulk quotes or custom specs, guide users to contact our sales team via WhatsApp (+91-7499394690) or email mgacharger@yahoo.com.`;
+    const systemInstruction = `You are MGA Assistant, the official AI technical sales & engineering expert for MGA Electronics (Est. 2002, GSTIN: 09AFOPG9627E1Z4, India).
+MGA manufactures heavy-duty industrial battery chargers, 12V/24V automotive chargers, BIG BOSS Titanium series, EV chargers, battery load testers, and custom OEM power supplies.
+Always provide helpful, concise, polite, and professional answers (2-4 sentences max).
+For custom quotes or exact pricing, guide users to contact our sales team on WhatsApp (+91-7499394690) or email mgacharger@yahoo.com.`;
 
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
@@ -36,31 +36,35 @@ For bulk quotes or custom specs, guide users to contact our sales team via Whats
           contents: [
             {
               role: "user",
-              parts: [
-                { text: `${systemInstruction}\n\nUser Question: ${message}` }
-              ]
-            }
-          ]
-        })
+              parts: [{ text: `${systemInstruction}\n\nUser Question: ${userPrompt}` }],
+            },
+          ],
+        }),
       }
     );
 
     if (!response.ok) {
       const errText = await response.text();
       console.error("Gemini API Error:", errText);
-      return NextResponse.json({ answer: null, error: "API_ERROR" }, { status: 200 });
+      return NextResponse.json({
+        reply: "Thank you for asking! For detailed technical specifications or custom OEM orders, please reach our technical sales team directly on WhatsApp (+91-7499394690).",
+      });
     }
 
     const data = await response.json();
     const candidateText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (candidateText) {
-      return NextResponse.json({ answer: candidateText.trim() });
+      return NextResponse.json({ reply: candidateText.trim() });
     }
 
-    return NextResponse.json({ answer: null, error: "NO_RESPONSE" });
+    return NextResponse.json({
+      reply: "Thank you for reaching out! For custom product inquiries, please contact our team on WhatsApp +91-7499394690.",
+    });
   } catch (error) {
     console.error("Chat API Exception:", error);
-    return NextResponse.json({ answer: null, error: "SERVER_ERROR" }, { status: 500 });
+    return NextResponse.json({
+      reply: "For direct assistance with MGA chargers, please connect with us on WhatsApp +91-7499394690.",
+    });
   }
 }
