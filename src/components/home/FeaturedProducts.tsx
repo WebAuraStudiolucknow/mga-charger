@@ -31,12 +31,12 @@ export function FeaturedProducts() {
           </Link>
         </div>
 
-        {/* Row-wise Grid with Animated Slide-In Cards */}
+        {/* Row-wise Grid with Smooth Bottom-to-Top Animated Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {featuredList.map((product, index) => (
             <AnimatedCard
               key={product.id}
-              direction={index % 2 === 0 ? "left" : "right"}
+              direction="up"
               index={index % 3}
             >
               <ProductCard product={product} />

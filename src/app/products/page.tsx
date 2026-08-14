@@ -63,7 +63,7 @@ export default async function ProductsPage({
               {filteredProducts.map((product, index) => (
                 <AnimatedCard
                   key={product.id}
-                  direction={index % 2 === 0 ? "left" : "right"}
+                  direction="up"
                   index={index % 3}
                 >
                   <ProductCard product={product} />

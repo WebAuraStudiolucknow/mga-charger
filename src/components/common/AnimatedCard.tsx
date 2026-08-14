@@ -20,12 +20,12 @@ export function AnimatedCard({
   const { ref, isInView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   const getInitialTransform = () => {
-    if (direction === "left") return "-translate-x-12 sm:-translate-x-16 opacity-0";
-    if (direction === "right") return "translate-x-12 sm:translate-x-16 opacity-0";
-    return "translate-y-12 opacity-0";
+    if (direction === "left") return "-translate-x-8 opacity-0";
+    if (direction === "right") return "translate-x-8 opacity-0";
+    return "translate-y-8 opacity-0 scale-[0.98]";
   };
 
-  const delayMs = index * 120;
+  const delayMs = Math.min(index * 100, 300);
 
   return (
     <div
@@ -33,7 +33,7 @@ export function AnimatedCard({
       style={{ transitionDelay: isInView ? `${delayMs}ms` : "0ms" }}
       className={cn(
         "will-change-transform transition-all duration-700 ease-out",
-        isInView ? "opacity-100 translate-x-0 translate-y-0" : getInitialTransform(),
+        isInView ? "opacity-100 translate-x-0 translate-y-0 scale-100" : getInitialTransform(),
         className
       )}
     >
