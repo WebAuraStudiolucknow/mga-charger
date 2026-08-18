@@ -25,6 +25,10 @@ export const navigation = [
     href: "/brochure",
   },
   {
+    label: "Warranty",
+    href: "/warranty",
+  },
+  {
     label: "Contact Us",
     href: "/contact-us",
   },

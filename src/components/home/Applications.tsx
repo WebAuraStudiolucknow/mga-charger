@@ -1,81 +1,89 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const applications = [
   {
-    id: "auto",
-    title: "Automotive",
-    desc: "Passenger cars, commercial vehicles, and fleet charging.",
-    size: "large",
-    className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-1 md:row-span-2 h-[300px] md:h-auto"
+    id: "automotive",
+    title: "Automotive & Fleet",
+    desc: "Passenger cars, commercial trucks, garages, and workshop charging stations.",
+    image: "/products/prod_car_charger.png",
+    className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-1 md:row-span-2 h-[320px] md:h-auto"
   },
   {
-    id: "ind",
-    title: "Industrial",
-    desc: "Forklifts, material handling, and heavy machinery.",
-    size: "small",
-    className: "col-span-1 md:col-span-1 lg:col-span-1 h-[250px] md:h-[300px]"
+    id: "industrial",
+    title: "Industrial Machinery",
+    desc: "Forklifts, material handling, and factory heavy equipment banks.",
+    image: "/products/prod_automatic_charger.png",
+    className: "col-span-1 md:col-span-1 lg:col-span-1 h-[260px] md:h-[320px]"
   },
   {
     id: "ev",
-    title: "Electric Vehicles",
-    desc: "2-wheelers, 3-wheelers, and custom EV packs.",
-    size: "small",
-    className: "col-span-1 md:col-span-1 lg:col-span-1 h-[250px] md:h-[300px]"
+    title: "Electric Vehicles (EV)",
+    desc: "2-wheelers, 3-wheelers (E-Rickshaw), and custom EV packs.",
+    image: "/products/hero-slide-2.png",
+    className: "col-span-1 md:col-span-1 lg:col-span-1 h-[260px] md:h-[320px]"
   },
   {
-    id: "power",
-    title: "Power Backup",
-    desc: "Inverters, telecom, and critical infrastructure.",
-    size: "wide",
-    className: "col-span-1 md:col-span-2 lg:col-span-2 h-[250px] md:h-[300px]"
+    id: "inverter",
+    title: "Power Backup & Inverters",
+    desc: "Telecom infrastructure, battery banks, and critical power backup.",
+    image: "/products/prod_big_boss_titanium.png",
+    className: "col-span-1 md:col-span-2 lg:col-span-2 h-[260px] md:h-[320px]"
   }
 ];
 
 export function Applications() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
-      <div className="max-w-[1280px] xl:max-w-[1400px] mx-auto px-6 lg:px-8">
+    <section className="py-20 lg:py-28 bg-[#0B1528] text-white relative overflow-hidden border-b border-white/10">
+      {/* Background Ambient Glows */}
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="max-w-[1280px] xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 lg:mb-16">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 lg:mb-16">
           <div className="max-w-2xl">
-            <div className="text-accent font-semibold tracking-wider text-xs uppercase mb-4 flex items-center">
-              <span className="w-6 h-[2px] bg-accent mr-3"></span>
-              APPLICATIONS
+            <div className="text-accent-light font-bold tracking-widest text-xs uppercase mb-3 flex items-center bg-accent/15 px-3 py-1 rounded-full w-max border border-accent/30">
+              <Zap className="w-3.5 h-3.5 mr-1.5 text-accent" />
+              INDUSTRY APPLICATIONS
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-primary-text tracking-tight leading-[1.1]">
-              Engineered for every industry.
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.1]">
+              Engineered for Every Sector.
             </h2>
           </div>
+          <p className="text-sm text-slate-300 max-w-md mt-4 md:mt-0 font-light">
+            MGA heavy-duty chargers are custom built to withstand demanding industrial environments with 24x7 operational reliability.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 auto-rows-fr">
+        {/* Industrial Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 auto-rows-fr">
           {applications.map((app) => (
             <Link 
               key={app.id}
               href={`/products?category=${app.id}`}
               className={cn(
-                "group relative overflow-hidden rounded-lg bg-off-white block",
+                "group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 block hover:border-accent/50 transition-all duration-500 hover:-translate-y-1 shadow-xl",
                 app.className
               )}
             >
-              {/* Fake Background Pattern for Industrial Feel */}
-              <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-50"></div>
+              {/* Radial Texture Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1528] via-[#0B1528]/60 to-transparent z-10 opacity-90 group-hover:opacity-80 transition-opacity duration-500"></div>
               
-              <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-deep-navy/20 to-transparent z-10 opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 bg-accent/90 opacity-0 group-hover:opacity-80 transition-opacity duration-500 z-20 mix-blend-multiply"></div>
-              
-              <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-end z-30 transform group-hover:-translate-y-2 transition-transform duration-500">
+              {/* Content */}
+              <div className="absolute inset-0 p-6 sm:p-8 lg:p-10 flex flex-col justify-end z-20">
                 <div className="flex justify-between items-end">
                   <div>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2">{app.title}</h3>
-                    <p className="text-white/80 max-w-[80%] text-sm lg:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                    <span className="text-[10px] font-bold text-accent-light uppercase tracking-wider block mb-1">MGA Sector</span>
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white mb-2 group-hover:text-accent-light transition-colors">{app.title}</h3>
+                    <p className="text-slate-300 max-w-[90%] text-xs sm:text-sm font-light leading-relaxed">
                       {app.desc}
                     </p>
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                    <ArrowUpRight className="w-6 h-6" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accent text-white flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                 </div>
               </div>

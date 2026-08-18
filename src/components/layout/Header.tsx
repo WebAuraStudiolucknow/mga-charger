@@ -107,7 +107,8 @@ export function Header() {
               href="/contact-us"
               className="bg-accent text-white px-6 py-2.5 rounded-sm font-medium text-sm hover:bg-accent-dark transition-colors shadow-sm"
             >
-              Request a Quote
+
+              Enquiry
             </Link>
           </div>
 

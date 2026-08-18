@@ -79,7 +79,7 @@ export default async function ProductDetailPage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
             
             {/* Product Image & Showcase (Left 5 Columns) */}
-            <div className="lg:col-span-5 p-6 sm:p-10 bg-[#F4F6F8] border-b lg:border-b-0 lg:border-r border-border/80 flex flex-col justify-between items-center relative">
+            <div className="lg:col-span-5 p-6 sm:p-10 bg-white border-b lg:border-b-0 lg:border-r border-border/80 flex flex-col justify-between items-center relative">
               
               {/* Trust Badges Bar */}
               <div className="w-full flex items-center justify-between mb-4 z-10">

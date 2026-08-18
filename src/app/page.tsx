@@ -23,13 +23,11 @@ export default function Home() {
       <ScrollReveal><ProductCategories /></ScrollReveal>
       <AboutPreview />
       <ScrollReveal><WhyMGA /></ScrollReveal>
-      {/* <ScrollReveal><Applications /></ScrollReveal> */}
       <ScrollReveal><CustomSolutions /></ScrollReveal>
       <ScrollReveal><CompanyStats /></ScrollReveal>
       <ScrollReveal><ClientLogos /></ScrollReveal>
       <ScrollReveal><Testimonials /></ScrollReveal>
       <ScrollReveal><BlogPreview /></ScrollReveal>
-      <ScrollReveal><GalleryPreview /></ScrollReveal>
       <ScrollReveal><ContactCTA /></ScrollReveal>
     </>
   );
