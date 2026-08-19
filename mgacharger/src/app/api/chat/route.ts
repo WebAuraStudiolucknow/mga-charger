@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from "next";
 
 export async function POST(req: Request) {
   try {
@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     if (!apiKey || apiKey === "your_gemini_api_key_here") {
       return NextResponse.json(
         {
-          reply: "I am MGA Electronics Technical Assistant. For custom specifications, OEM bulk pricing, or technical inquiries, please connect with our team on WhatsApp at +91-7499394690 or email mgacharger@yahoo.com.",
+          reply: "I am MGA Electronics Technical Assistant. For custom specifications, OEM bulk pricing, or technical inquiries, please connect with our team on WhatsApp at +91-7499394690 or email enquiry@mgacharger.com.",
         },
         { status: 200 }
       );
@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     const systemInstruction = `You are MGA Assistant, the official AI technical sales & engineering expert for MGA Electronics (Est. 2002, GSTIN: 09AFOPG9627E1Z4, India).
 MGA manufactures heavy-duty industrial battery chargers, 12V/24V automotive chargers, BIG BOSS Titanium series, EV chargers, battery load testers, and custom OEM power supplies.
 Always provide helpful, concise, polite, and professional answers (2-4 sentences max).
-For custom quotes or exact pricing, guide users to contact our sales team on WhatsApp (+91-7499394690) or email mgacharger@yahoo.com.`;
+For custom quotes or exact pricing, guide users to contact our sales team on WhatsApp (+91-7499394690) or email enquiry@mgacharger.com.`;
 
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,

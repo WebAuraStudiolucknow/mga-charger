@@ -39,7 +39,7 @@ export function ContactCTA() {
                 </div>
                 <div>
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">EMAIL INQUIRY</span>
-                  <a href="mailto:mgacharger@yahoo.com" className="text-base font-bold text-white hover:text-accent-light transition-colors">mgacharger@yahoo.com</a>
+                  <a href="mailto:enquiry@mgacharger.com" className="text-base font-bold text-white hover:text-accent-light transition-colors">enquiry@mgacharger.com</a>
                 </div>
               </div>
 

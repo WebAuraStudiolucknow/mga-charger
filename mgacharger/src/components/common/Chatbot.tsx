@@ -70,7 +70,7 @@ const faqs = [
     id: "contact_loc",
     question: "Where is MGA located & how to contact?",
     keywords: ["location", "address", "contact", "phone", "number", "email", "lucknow", "where", "call"],
-    answer: "We are located in Lucknow, UP, India. You can call us at +91-7499394690 / +91-9076731251 or email mgacharger@yahoo.com."
+    answer: "We are located in Lucknow, UP, India. You can call us at +91-7499394690 / +91-9076731251 or email contact@mgacharger.com."
   }
 ];
 

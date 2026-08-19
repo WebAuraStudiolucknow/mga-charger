@@ -158,7 +158,7 @@ export function MobileMenu({ isOpen, onClose, navigation, pathname }: MobileMenu
             </div>
             <div className="flex items-center">
               <Mail className="w-4 h-4 mr-3 text-accent shrink-0" />
-              <a href="mailto:mgacharger@yahoo.com">mgacharger@yahoo.com</a>
+              <a href="mailto:contact@mgacharger.com">contact@mgacharger.com</a>
             </div>
           </div>
         </div>

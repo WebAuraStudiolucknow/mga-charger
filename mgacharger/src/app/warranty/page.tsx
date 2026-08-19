@@ -128,7 +128,7 @@ export default function WarrantyPage() {
               <div className="space-y-2 text-xs font-medium bg-white/10 p-4 rounded-lg border border-white/15">
                 <div>Phone: <a href="tel:+917499394690" className="text-accent-light font-bold hover:underline">+91 74993 94690</a></div>
                 <div>Alternative: <a href="tel:+919076731251" className="text-accent-light font-bold hover:underline">+91 90767 31251</a></div>
-                <div>Email: <a href="mailto:mgacharger@yahoo.com" className="text-slate-200 underline">mgacharger@yahoo.com</a></div>
+                <div>Email: <a href="mailto:warranty@mgacharger.com" className="text-accent-light font-bold hover:underline">warranty@mgacharger.com</a></div>
               </div>
             </div>
 

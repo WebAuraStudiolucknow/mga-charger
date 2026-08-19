@@ -351,11 +351,11 @@ export default async function ProductDetailPage({ params }: Props) {
                 </a>
                 
                 <a 
-                  href="mailto:mgacharger@yahoo.com" 
+                  href="mailto:enquiry@mgacharger.com" 
                   className="flex items-center p-3 rounded-xl bg-secondary-bg hover:bg-accent-light hover:border-accent/30 border border-border/60 transition-all text-primary-text hover:text-accent font-semibold text-xs sm:text-sm"
                 >
                   <FileText className="w-4 h-4 text-accent mr-3 shrink-0" />
-                  <span>Email: mgacharger@yahoo.com</span>
+                  <span>Email: enquiry@mgacharger.com</span>
                 </a>
               </div>
             </div>
