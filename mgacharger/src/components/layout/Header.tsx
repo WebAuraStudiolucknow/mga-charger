@@ -42,14 +42,14 @@ export function Header() {
           isScrolled ? "shadow-sm border-transparent" : "border-border"
         )}
       >
-        <div className="max-w-[1280px] xl:max-w-[1400px] mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div className="max-w-[1280px] xl:max-w-[1400px] mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center shrink-0 py-1 focus:outline-none border-none outline-none">
             <Image
               src="/logo.png"
               alt="MGA Electronics Logo"
-              width={180}
-              height={50}
-              className="h-10 sm:h-12 w-auto object-contain"
+              width={160}
+              height={45}
+              className="h-8 sm:h-10 w-auto object-contain"
               priority
             />
           </Link>
@@ -159,15 +159,6 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center shrink-0 space-x-3">
-            <a
-              href="https://s3744.bom1.stableserver.net:2096/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-bold text-slate-600 hover:text-accent bg-secondary-bg px-3 py-2 rounded-md border border-border transition-colors flex items-center"
-            >
-              Mail Login
-              <ExternalLink className="w-3 h-3 ml-1.5 opacity-70" />
-            </a>
             <Link
               href="/contact-us"
               className="bg-accent text-white px-6 py-2.5 rounded-sm font-medium text-sm hover:bg-accent-dark transition-colors shadow-sm"
