@@ -103,14 +103,8 @@ export interface Config {
     defaultIDType: string;
   };
   fallbackLocale: ('false' | 'none' | 'null') | false | null | 'en' | 'en'[];
-  globals: {
-    'home-hero': HomeHero;
-    'site-settings': SiteSetting;
-  };
-  globalsSelect: {
-    'home-hero': HomeHeroSelect<false> | HomeHeroSelect<true>;
-    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
-  };
+  globals: {};
+  globalsSelect: {};
   locale: 'en';
   widgets: {
     collections: CollectionsWidget;
@@ -884,88 +878,6 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "home-hero".
- */
-export interface HomeHero {
-  id: string;
-  slides: {
-    eyebrow: string;
-    heading: string;
-    description: string;
-    ctaLabel: string;
-    ctaLink: string;
-    image: string | Media;
-    id?: string | null;
-  }[];
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "site-settings".
- */
-export interface SiteSetting {
-  id: string;
-  phonePrimary: string;
-  phoneSecondary?: string | null;
-  email: string;
-  whatsappNumber: string;
-  facilityAddress: string;
-  yearsOfExperience?: string | null;
-  stats?:
-    | {
-        value: string;
-        label: string;
-        id?: string | null;
-      }[]
-    | null;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "home-hero_select".
- */
-export interface HomeHeroSelect<T extends boolean = true> {
-  slides?:
-    | T
-    | {
-        eyebrow?: T;
-        heading?: T;
-        description?: T;
-        ctaLabel?: T;
-        ctaLink?: T;
-        image?: T;
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "site-settings_select".
- */
-export interface SiteSettingsSelect<T extends boolean = true> {
-  phonePrimary?: T;
-  phoneSecondary?: T;
-  email?: T;
-  whatsappNumber?: T;
-  facilityAddress?: T;
-  yearsOfExperience?: T;
-  stats?:
-    | T
-    | {
-        value?: T;
-        label?: T;
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

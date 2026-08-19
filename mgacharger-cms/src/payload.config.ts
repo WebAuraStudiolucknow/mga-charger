@@ -16,20 +16,12 @@ import { WarrantyRegistrations } from './collections/WarrantyRegistrations'
 import { Gallery } from './collections/Gallery'
 import { Testimonials } from './collections/Testimonials'
 
-import { HomeHero } from './globals/HomeHero'
-import { SiteSettings } from './globals/SiteSettings'
-
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
   admin: {
     user: Users.slug,
-    components: {
-      beforeDashboard: [
-        '/components/admin/DashboardStats#DashboardStats',
-      ],
-    },
     importMap: {
       baseDir: path.resolve(dirname),
     },
@@ -45,10 +37,6 @@ export default buildConfig({
     WarrantyRegistrations,
     Gallery,
     Testimonials,
-  ],
-  globals: [
-    HomeHero,
-    SiteSettings,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'mgacharger_payload_secret_key_2026_super_secure',
