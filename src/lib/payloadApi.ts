@@ -43,6 +43,17 @@ async function fetchPayloadData<T>(endpoint: string, options?: RequestInit): Pro
   }
 }
 
+function resolveProductImageUrl(doc: any): string {
+  if (doc.featuredImage?.url) return getImageUrl(doc.featuredImage.url);
+  if (doc.imagePath && typeof doc.imagePath === 'string' && doc.imagePath.trim() !== '') {
+    return getImageUrl(doc.imagePath);
+  }
+  if (doc.slug) {
+    return `/products/${doc.slug}.png`;
+  }
+  return '/products/mga-intelligent-hawk-multi-channel-battery-station.png';
+}
+
 // ----------------------------------------------------
 // PRODUCTS API
 // ----------------------------------------------------
@@ -68,8 +79,8 @@ export async function getProducts(params?: { category?: string; featured?: boole
       categoryName: doc.categoryName || 'Automotive Charger',
       shortDescription: doc.shortDescription || '',
       description: doc.description || '',
-      image: getImageUrl(doc.featuredImage?.url || doc.imagePath || '/products/hero-slide-1.png'),
-      gallery: (doc.gallery || []).map((g: any) => getImageUrl(g.image?.url || g.imagePath)),
+      image: resolveProductImageUrl(doc),
+      gallery: (doc.gallery || []).map((g: any) => getImageUrl(g.image?.url || g.imagePath || resolveProductImageUrl(doc))),
       specifications: doc.specifications || [],
       features: (doc.features || []).map((f: any) => f.feature || f),
       featured: Boolean(doc.featured),
@@ -100,8 +111,8 @@ export async function getProductBySlug(slug: string): Promise<any | null> {
       categoryName: doc.categoryName || 'Automotive Charger',
       shortDescription: doc.shortDescription || '',
       description: doc.description || '',
-      image: getImageUrl(doc.featuredImage?.url || doc.imagePath || '/products/hero-slide-1.png'),
-      gallery: (doc.gallery || []).map((g: any) => getImageUrl(g.image?.url || g.imagePath)),
+      image: resolveProductImageUrl(doc),
+      gallery: (doc.gallery || []).map((g: any) => getImageUrl(g.image?.url || g.imagePath || resolveProductImageUrl(doc))),
       specifications: doc.specifications || [],
       features: (doc.features || []).map((f: any) => f.feature || f),
       featured: Boolean(doc.featured),

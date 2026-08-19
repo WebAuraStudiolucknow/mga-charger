@@ -43,7 +43,7 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* Product Image */}
         <div className="relative w-full h-full my-auto flex items-center justify-center">
           <Image
-            src={product.image}
+            src={product.image || `/products/${product.slug}.png`}
             alt={product.name}
             fill
             className="object-contain p-4 group-hover:scale-108 transition-transform duration-700 ease-out"
