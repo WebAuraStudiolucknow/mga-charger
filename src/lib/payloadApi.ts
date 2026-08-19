@@ -113,6 +113,24 @@ export async function getProductBySlug(slug: string): Promise<any | null> {
 // ----------------------------------------------------
 // BLOGS API
 // ----------------------------------------------------
+// Helper function to resolve blog image cleanly from Payload CMS or fallback
+function getBlogImage(doc: any): string {
+  if (doc.featuredImage?.url) {
+    return getImageUrl(doc.featuredImage.url);
+  }
+  if (typeof doc.featuredImage === 'string' && doc.featuredImage.trim() !== '') {
+    return getImageUrl(doc.featuredImage);
+  }
+  if (doc.imagePath && typeof doc.imagePath === 'string' && doc.imagePath.trim() !== '') {
+    return getImageUrl(doc.imagePath);
+  }
+  const matched = staticBlogs.find((b) => b.slug === doc.slug);
+  if (matched?.image) {
+    return getImageUrl(matched.image);
+  }
+  return '/images/ev-charger-guide.jpg';
+}
+
 export async function getBlogs(): Promise<any[]> {
   const result = await fetchPayloadData<{ docs: any[] }>(`/blogs?where[status][equals]=published&sort=-publishedAt`);
 
@@ -123,9 +141,9 @@ export async function getBlogs(): Promise<any[]> {
       slug: doc.slug,
       excerpt: doc.excerpt || '',
       content: doc.content || '',
-      date: doc.publishedAt ? new Date(doc.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'Nov 02, 2023',
-      author: doc.author || 'Technical Support',
-      image: getImageUrl(doc.featuredImage?.url || doc.imagePath || '/products/hero-slide-1.png'),
+      date: doc.publishedAt ? new Date(doc.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'Feb 15, 2026',
+      author: doc.author || 'MGA Engineering Team',
+      image: getBlogImage(doc),
     }));
   }
 
@@ -143,9 +161,9 @@ export async function getBlogBySlug(slug: string): Promise<any | null> {
       slug: doc.slug,
       excerpt: doc.excerpt || '',
       content: doc.content || '',
-      date: doc.publishedAt ? new Date(doc.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'Nov 02, 2023',
-      author: doc.author || 'Technical Support',
-      image: getImageUrl(doc.featuredImage?.url || doc.imagePath || '/products/hero-slide-1.png'),
+      date: doc.publishedAt ? new Date(doc.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'Feb 15, 2026',
+      author: doc.author || 'MGA Engineering Team',
+      image: getBlogImage(doc),
     };
   }
 
