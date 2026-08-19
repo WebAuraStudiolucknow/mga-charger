@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# mgacharger-cms ignores
+mgacharger-cms/node_modules
+mgacharger-cms/.next
+mgacharger-cms/out
+mgacharger-cms/build
+mgacharger-cms/.env*
+mgacharger-cms/public/media
+
