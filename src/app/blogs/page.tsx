@@ -48,7 +48,7 @@ export default async function BlogsPage() {
           <div className="bg-white rounded-lg border border-border overflow-hidden grid grid-cols-1 lg:grid-cols-2 hover:border-accent transition-colors duration-300">
             <Link href={`/blogs/${featuredBlog.slug}`} className="relative aspect-[4/3] lg:aspect-auto">
               <Image
-                src={featuredBlog.image}
+                src={featuredBlog.image || featuredBlog.imagePath || '/images/ev-charger-guide.jpg'}
                 alt={featuredBlog.title}
                 fill
                 className="object-cover"

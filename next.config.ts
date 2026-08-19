@@ -4,6 +4,11 @@ const remotePatternsList = [
   {
     protocol: "http" as const,
     hostname: "localhost",
+    port: "3001",
+  },
+  {
+    protocol: "http" as const,
+    hostname: "localhost",
   },
   {
     protocol: "https" as const,
@@ -12,9 +17,10 @@ const remotePatternsList = [
   {
     protocol: "http" as const,
     hostname: "127.0.0.1",
+    port: "3001",
   },
   {
-    protocol: "https" as const,
+    protocol: "http" as const,
     hostname: "127.0.0.1",
   },
   {
@@ -26,10 +32,11 @@ const remotePatternsList = [
 if (process.env.NEXT_PUBLIC_PAYLOAD_URL) {
   try {
     const url = new URL(process.env.NEXT_PUBLIC_PAYLOAD_URL);
-    if (!remotePatternsList.some((p) => p.hostname === url.hostname)) {
+    if (!remotePatternsList.some((p) => p.hostname === url.hostname && p.port === url.port)) {
       remotePatternsList.push({
         protocol: url.protocol.replace(":", "") as "http" | "https",
         hostname: url.hostname,
+        port: url.port || undefined,
       });
     }
   } catch {
@@ -39,9 +46,9 @@ if (process.env.NEXT_PUBLIC_PAYLOAD_URL) {
 
 const nextConfig: NextConfig = {
   images: {
+    unoptimized: true,
     remotePatterns: remotePatternsList,
   },
 };
 
 export default nextConfig;
-

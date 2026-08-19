@@ -135,16 +135,20 @@ export async function getBlogs(): Promise<any[]> {
   const result = await fetchPayloadData<{ docs: any[] }>(`/blogs?where[status][equals]=published&sort=-publishedAt`);
 
   if (result && Array.isArray(result.docs) && result.docs.length > 0) {
-    return result.docs.map((doc) => ({
-      id: String(doc.id),
-      title: doc.title,
-      slug: doc.slug,
-      excerpt: doc.excerpt || '',
-      content: doc.content || '',
-      date: doc.publishedAt ? new Date(doc.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'Feb 15, 2026',
-      author: doc.author || 'MGA Engineering Team',
-      image: getBlogImage(doc),
-    }));
+    return result.docs.map((doc) => {
+      const img = getBlogImage(doc);
+      return {
+        id: String(doc.id),
+        title: doc.title,
+        slug: doc.slug,
+        excerpt: doc.excerpt || '',
+        content: doc.content || '',
+        date: doc.publishedAt ? new Date(doc.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'Feb 15, 2026',
+        author: doc.author || 'MGA Engineering Team',
+        image: img,
+        imagePath: img,
+      };
+    });
   }
 
   return staticBlogs;
@@ -155,6 +159,7 @@ export async function getBlogBySlug(slug: string): Promise<any | null> {
 
   if (result && Array.isArray(result.docs) && result.docs.length > 0) {
     const doc = result.docs[0];
+    const img = getBlogImage(doc);
     return {
       id: String(doc.id),
       title: doc.title,
@@ -163,7 +168,8 @@ export async function getBlogBySlug(slug: string): Promise<any | null> {
       content: doc.content || '',
       date: doc.publishedAt ? new Date(doc.publishedAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : 'Feb 15, 2026',
       author: doc.author || 'MGA Engineering Team',
-      image: getBlogImage(doc),
+      image: img,
+      imagePath: img,
     };
   }
 
