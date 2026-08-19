@@ -20,6 +20,15 @@ export const metadata: Metadata = {
     default: "MGA Electronics | Industrial Battery Chargers & Power Solutions",
   },
   description: "Advanced battery chargers and power solutions engineered for automotive, industrial and energy applications. Reliable manufacturing since 2002.",
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico" }
+    ],
+    shortcut: ["/favicon.png"],
+    apple: [{ url: "/favicon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({
