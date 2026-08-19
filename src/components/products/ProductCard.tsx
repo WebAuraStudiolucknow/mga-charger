@@ -32,7 +32,7 @@ export function ProductCard({ product }: ProductCardProps) {
       className="group bg-white border border-border/80 rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-xs hover:shadow-2xl hover:shadow-accent/15 transition-all duration-500 hover:-translate-y-1.5 flex flex-col h-full relative cursor-pointer"
     >
       {/* Top Image Showcase Section */}
-      <div className="relative aspect-[4/3] bg-white border-b border-border/60 p-6 flex flex-col justify-between items-center overflow-hidden">
+      <div className="relative aspect-square bg-white border-b border-border/60 p-6 flex flex-col justify-between items-center overflow-hidden">
         {/* Category Tag (Top Left Badge) */}
         <div className="absolute top-4 left-4 z-10">
           <span className="text-[10px] font-bold tracking-wider uppercase bg-white/90 backdrop-blur-md text-secondary-text px-3 py-1 rounded-full shadow-xs border border-border/50">
