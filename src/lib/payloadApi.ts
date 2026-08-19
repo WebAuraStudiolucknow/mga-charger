@@ -1,6 +1,7 @@
 import { products as staticProducts } from "@/data/products";
 import { blogs as staticBlogs } from "@/data/blogs";
 import { gallery as staticGallery } from "@/data/gallery";
+import { galleryProducts } from "@/data/galleryProducts";
 import { getImageUrl } from "./getImageUrl";
 
 /**
@@ -183,20 +184,26 @@ export async function getGalleryItems(): Promise<any[]> {
   const result = await fetchPayloadData<{ docs: any[] }>(`/gallery?limit=100&sort=-createdAt`);
 
   if (result && Array.isArray(result.docs) && result.docs.length > 0) {
-    return result.docs.map((doc, idx) => ({
-      id: String(doc.id || idx),
-      title: doc.title || doc.filename || 'Gallery Image',
-      category: doc.categoryName || (typeof doc.category === 'object' ? doc.category?.name : 'Manufacturing'),
-      src: getImageUrl(doc.url || (doc.filename ? `/api/gallery/file/${doc.filename}` : '/images/about-facility.png')),
-    }));
+    return result.docs.map((doc, idx) => {
+      const fallback = galleryProducts[idx % galleryProducts.length];
+      return {
+        id: String(doc.id || idx),
+        slug: doc.slug || fallback.slug,
+        title: doc.title || doc.filename || fallback.title,
+        category: doc.categoryName || (typeof doc.category === 'object' ? doc.category?.name : fallback.category),
+        modelGrade: doc.modelGrade || fallback.modelGrade,
+        rating: doc.rating || fallback.rating,
+        reviews: doc.reviews || fallback.reviews,
+        shortDescription: doc.shortDescription || fallback.shortDescription,
+        description: doc.description || fallback.description,
+        specifications: doc.specifications || fallback.specifications,
+        features: doc.features || fallback.features,
+        src: getImageUrl(doc.url || (doc.filename ? `/api/gallery/file/${doc.filename}` : fallback.src)),
+      };
+    });
   }
 
-  return staticGallery.map((item, idx) => ({
-    id: String(idx),
-    title: item.alt,
-    category: item.category,
-    src: item.src,
-  }));
+  return galleryProducts;
 }
 
 // ----------------------------------------------------
