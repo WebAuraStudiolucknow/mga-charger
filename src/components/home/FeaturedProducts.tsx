@@ -1,11 +1,22 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { products } from "@/data/products";
+import { products as staticProducts } from "@/data/products";
+import { getProducts } from "@/lib/payloadApi";
 import { ProductCard } from "@/components/products/ProductCard";
 import { AnimatedCard } from "@/components/common/AnimatedCard";
 
-export function FeaturedProducts() {
-  const featuredList = products.filter(p => p.featured).slice(0, 6);
+interface Props {
+  initialProducts?: any[];
+}
+
+export async function FeaturedProducts({ initialProducts }: Props) {
+  const productsData = initialProducts && initialProducts.length > 0
+    ? initialProducts
+    : await getProducts({ featured: true });
+
+  const featuredList = productsData && productsData.length > 0
+    ? productsData.slice(0, 6)
+    : staticProducts.filter(p => p.featured).slice(0, 6);
 
   return (
     <section className="py-20 lg:py-32 bg-white border-b border-border overflow-hidden">
@@ -33,9 +44,9 @@ export function FeaturedProducts() {
 
         {/* Row-wise Grid with Smooth Bottom-to-Top Animated Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {featuredList.map((product, index) => (
+          {featuredList.map((product: any, index: number) => (
             <AnimatedCard
-              key={product.id}
+              key={product.id || index}
               direction="up"
               index={index % 3}
             >
@@ -59,4 +70,3 @@ export function FeaturedProducts() {
     </section>
   );
 }
-

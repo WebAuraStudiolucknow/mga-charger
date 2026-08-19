@@ -1,11 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
-import { blogs } from "@/data/blogs";
+import { blogs as staticBlogs } from "@/data/blogs";
+import { getBlogs } from "@/lib/payloadApi";
 
-export function BlogPreview() {
-  const featuredArticle = blogs[0];
-  const sideArticles = blogs.slice(1, 3);
+interface Props {
+  initialBlogs?: any[];
+}
+
+export async function BlogPreview({ initialBlogs }: Props) {
+  const blogsData = initialBlogs && initialBlogs.length > 0
+    ? initialBlogs
+    : await getBlogs();
+
+  const blogList = blogsData && blogsData.length > 0 ? blogsData.slice(0, 3) : staticBlogs.slice(0, 3);
 
   return (
     <section className="py-20 lg:py-32 bg-off-white">
@@ -31,16 +39,16 @@ export function BlogPreview() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((article) => (
+          {blogList.map((article: any) => (
             <Link 
-              key={article.slug}
+              key={article.slug || article.id}
               href={`/blogs/${article.slug}`}
               className="group bg-white rounded-xl overflow-hidden border border-border hover:border-accent hover:shadow-xl hover:shadow-accent/10 transition-all duration-500 flex flex-col h-full"
             >
               {/* Top Image */}
               <div className="relative aspect-[16/10] overflow-hidden shrink-0 border-b border-border/50">
                 <Image
-                  src={article.image}
+                  src={article.image || article.imagePath || '/images/ev-charger-guide.jpg'}
                   alt={article.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -51,11 +59,11 @@ export function BlogPreview() {
               <div className="p-6 md:p-8 flex flex-col flex-grow">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-bold text-accent uppercase tracking-wider bg-accent-light px-2.5 py-1 rounded-sm">
-                    {article.category}
+                    {article.category || 'Technology'}
                   </span>
                   <span className="text-xs text-secondary-text font-medium flex items-center">
                     <Calendar className="w-3.5 h-3.5 mr-1.5" />
-                    {article.date}
+                    {article.date || 'Feb 2026'}
                   </span>
                 </div>
                 
