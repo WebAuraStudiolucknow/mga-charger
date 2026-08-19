@@ -18,23 +18,24 @@ import {
   Wrench,
   Gauge
 } from "lucide-react";
-import { products } from "@/data/products";
 import { ProductCard } from "@/components/products/ProductCard";
 import { BsWhatsapp } from "react-icons/bs";
+import { getProductBySlug, getProducts } from "@/lib/payloadApi";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return products.map((product) => ({
+  const allProducts = await getProducts();
+  return allProducts.map((product) => ({
     slug: product.slug,
   }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const product = products.find((p) => p.slug === slug);
+  const product = await getProductBySlug(slug);
   if (!product) return { title: "Product Not Found" };
 
   return {
@@ -45,14 +46,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProductDetailPage({ params }: Props) {
   const { slug } = await params;
-  const product = products.find((p) => p.slug === slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     notFound();
   }
 
-  const relatedProducts = products
-    .filter((p) => p.category === product.category && p.id !== product.id)
+  const allProducts = await getProducts();
+  const relatedProducts = allProducts
+    .filter((p) => p.category === product.category && p.slug !== product.slug)
     .slice(0, 3);
 
   return (
@@ -165,7 +167,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 <div className="mb-8">
                   <h3 className="text-sm font-bold uppercase tracking-wider text-primary-text mb-3">Key Features & Capabilities</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {product.features?.map((feature, i) => (
+                    {product.features?.map((feature: string, i: number) => (
                       <div key={i} className="flex items-center text-sm font-medium text-primary-text bg-white border border-border/60 p-2.5 rounded-lg shadow-2xs">
                         <CheckCircle2 className="w-4 h-4 text-accent mr-2.5 shrink-0" />
                         <span className="text-xs sm:text-sm">{feature}</span>
@@ -230,7 +232,7 @@ export default async function ProductDetailPage({ params }: Props) {
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <tbody>
-                    {product.specifications.map((spec, i) => (
+                    {product.specifications?.map((spec: any, i: number) => (
                       <tr key={i} className="border-b border-border/60 last:border-0 hover:bg-secondary-bg/60 transition-colors">
                         <th className="py-3.5 px-4 font-semibold text-primary-text text-sm w-1/3 bg-secondary-bg/40">{spec.label}</th>
                         <td className="py-3.5 px-4 text-secondary-text font-medium text-sm">{spec.value}</td>
@@ -377,7 +379,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedProducts.map((rel) => (
-                <ProductCard key={rel.id} product={rel} />
+                <ProductCard key={rel.id || rel.slug} product={rel} />
               ))}
             </div>
           </div>
@@ -387,4 +389,3 @@ export default async function ProductDetailPage({ params }: Props) {
     </div>
   );
 }
-

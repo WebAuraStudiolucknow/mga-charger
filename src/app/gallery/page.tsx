@@ -2,17 +2,22 @@ import { Metadata } from "next";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { getGalleryItems } from "@/lib/payloadApi";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Gallery",
-  description: "Take a glimpse into our manufacturing facility, events, and company culture.",
+  title: "Gallery | MGA Charger",
+  description: "Take a visual tour of our manufacturing facility, events, and company culture.",
 };
 
-export default function GalleryPage() {
+export default async function GalleryPage() {
+  const galleryItems = await getGalleryItems();
+
   return (
     <div className="bg-secondary-bg min-h-screen pb-20">
       <div className="bg-white border-b border-border py-12 lg:py-16">
-        <div className="max-w-[1280px] xl:max-w-[1400px] mx-auto px-6 lg:px-8 text-center max-w-3xl mx-auto">
+        <div className="max-w-[1280px] xl:max-w-[1400px] mx-auto px-6 lg:px-8 text-center max-w-3xl">
           <div className="flex items-center justify-center text-sm text-secondary-text mb-6">
             <Link href="/" className="hover:text-accent transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4 mx-2" />
@@ -28,7 +33,7 @@ export default function GalleryPage() {
       </div>
 
       <div className="max-w-[1280px] xl:max-w-[1400px] mx-auto px-6 lg:px-8 py-12 lg:py-16">
-        <GalleryGrid />
+        <GalleryGrid initialItems={galleryItems} />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { submitWarrantyToCMS } from "@/lib/payloadApi";
 
 export async function POST(request: Request) {
   try {
@@ -13,6 +14,7 @@ export async function POST(request: Request) {
     const purchaseDate = formData.get("purchaseDate") as string;
     const invoiceNumber = formData.get("invoiceNumber") as string;
     const issueDescription = formData.get("issueDescription") as string;
+    const dealerName = formData.get("dealerName") as string;
     const file = formData.get("warrantyBill") as File | null;
 
     if (!fullName || !email || !phone || !serialNumber || !invoiceNumber) {
@@ -22,29 +24,26 @@ export async function POST(request: Request) {
       );
     }
 
-    let fileName = null;
-    let fileSize = null;
-    let fileType = null;
-
-    if (file && file.size > 0) {
-      fileName = file.name;
-      fileSize = file.size;
-      fileType = file.type;
-
-      // Validate file size limit (10MB)
-      if (file.size > 10 * 1024 * 1024) {
-        return NextResponse.json(
-          { error: "File size exceeds the 10MB limit." },
-          { status: 400 }
-        );
-      }
-    }
-
     // Generate unique reference number
     const randomNum = Math.floor(100000 + Math.random() * 900000);
     const referenceId = `MGA-WRN-${new Date().getFullYear()}-${randomNum}`;
 
-    // Return success response
+    // Submit to Payload CMS
+    await submitWarrantyToCMS({
+      referenceId,
+      fullName,
+      email,
+      phone,
+      address,
+      productName,
+      serialNumber,
+      purchaseDate,
+      invoiceNumber,
+      dealerName: dealerName || "",
+      issueDescription: issueDescription || "",
+      status: "pending",
+    });
+
     return NextResponse.json({
       success: true,
       message: "Warranty claim submitted successfully",
@@ -58,14 +57,14 @@ export async function POST(request: Request) {
         serialNumber,
         purchaseDate,
         invoiceNumber,
-        hasBillAttachment: !!fileName,
-        fileName,
+        hasBillAttachment: !!file?.name,
+        fileName: file?.name || null,
       },
     });
   } catch (error) {
     console.error("Warranty submission error:", error);
     return NextResponse.json(
-      { error: "An unexpected error occurred while processing your request." },
+      { error: "An unexpected error occurred while processing your warranty claim." },
       { status: 500 }
     );
   }

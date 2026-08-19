@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { submitEnquiryToCMS } from "@/lib/payloadApi";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -10,20 +11,31 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
+    setErrorMessage("");
 
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
     try {
-      // Simulate network request without backend API
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log("Form Data Submitted:", data);
+      const response = await submitEnquiryToCMS({
+        name: data.name,
+        company: data.company || "",
+        email: data.email,
+        phone: data.phone,
+        requirement: data.requirement,
+        message: data.message,
+        status: "new",
+      });
+
+      if (!response.success) {
+        throw new Error(response.message || "Failed to submit enquiry.");
+      }
       
       setStatus("success");
       (e.target as HTMLFormElement).reset();
     } catch (error) {
       setStatus("error");
-      setErrorMessage(error instanceof Error ? error.message : "An error occurred");
+      setErrorMessage(error instanceof Error ? error.message : "An error occurred submitting your enquiry");
     }
   };
 
@@ -135,12 +147,12 @@ export function ContactForm() {
       <button 
         type="submit" 
         disabled={status === "loading"}
-        className="w-full bg-accent text-white px-8 py-4 rounded-sm font-bold hover:bg-accent-dark transition-colors flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed shadow-md text-lg"
+        className="w-full bg-accent text-white px-8 py-4 rounded-sm font-bold hover:bg-accent-dark transition-colors flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed shadow-md text-lg cursor-pointer"
       >
         {status === "loading" ? (
           <>
             <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-            Sending...
+            Submitting to Payload CMS...
           </>
         ) : (
           <>

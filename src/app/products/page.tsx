@@ -1,13 +1,13 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { products } from "@/data/products";
 import { ProductCatalogView } from "@/components/products/ProductCatalogView";
+import { getProducts } from "@/lib/payloadApi";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Products",
+  title: "Products | MGA Charger",
   description: "Explore our comprehensive range of battery chargers, testing equipment, and power solutions.",
 };
 
@@ -18,6 +18,7 @@ export default async function ProductsPage({
 }) {
   const { category } = await searchParams;
   const currentCategory = category || "all";
+  const products = await getProducts();
 
   return (
     <div className="bg-secondary-bg min-h-screen pb-20 overflow-hidden">

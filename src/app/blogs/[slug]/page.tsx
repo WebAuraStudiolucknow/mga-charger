@@ -2,14 +2,15 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { ChevronRight, Calendar, User, ArrowLeft } from "lucide-react";
-import { blogs } from "@/data/blogs";
+import { Calendar, User, ArrowLeft } from "lucide-react";
+import { getBlogBySlug, getBlogs } from "@/lib/payloadApi";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
+  const blogs = await getBlogs();
   return blogs.map((blog) => ({
     slug: blog.slug,
   }));
@@ -17,24 +18,26 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const blog = blogs.find((b) => b.slug === slug);
+  const blog = await getBlogBySlug(slug);
   if (!blog) return { title: "Article Not Found" };
 
   return {
-    title: blog.title,
+    title: `${blog.title} | MGA Charger`,
     description: blog.excerpt,
   };
 }
 
 export default async function BlogDetailPage({ params }: Props) {
   const { slug } = await params;
-  const blog = blogs.find((b) => b.slug === slug);
+  const blog = await getBlogBySlug(slug);
 
   if (!blog) {
     notFound();
   }
 
-  const relatedBlogs = blogs.filter(b => b.slug !== blog.slug).slice(0, 2);
+  const allBlogs = await getBlogs();
+  const relatedBlogs = allBlogs.filter(b => b.slug !== blog.slug).slice(0, 2);
+  const isHtmlContent = Boolean(blog.content && (blog.content.includes('<p>') || blog.content.includes('<h2>') || blog.content.includes('<h3>') || blog.content.includes('<ul>') || blog.content.includes('<div') || blog.content.includes('<br')));
 
   return (
     <div className="bg-white min-h-screen pb-20">
@@ -49,12 +52,6 @@ export default async function BlogDetailPage({ params }: Props) {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to all articles
             </Link>
-            
-            <div className="flex items-center justify-center space-x-4 mb-6">
-              <span className="bg-accent/10 text-accent font-bold px-3 py-1 rounded-sm text-xs uppercase tracking-wider">
-                {blog.category}
-              </span>
-            </div>
             
             <h1 className="text-3xl md:text-5xl font-bold text-primary-text mb-6 tracking-tight leading-[1.15]">
               {blog.title}
@@ -85,14 +82,18 @@ export default async function BlogDetailPage({ params }: Props) {
             />
           </div>
           
-          <div className="prose prose-lg max-w-none text-secondary-text leading-relaxed prose-headings:text-primary-text prose-a:text-accent">
+          <div className="prose prose-lg max-w-none text-secondary-text leading-relaxed prose-headings:text-primary-text prose-headings:font-bold prose-a:text-accent prose-a:font-semibold prose-img:rounded-xl prose-strong:text-primary-text">
             <p className="text-xl leading-relaxed text-primary-text font-medium mb-8">
               {blog.excerpt}
             </p>
-            {/* Split content by double newlines for paragraphs if needed, or just render it directly */}
-            {blog.content.split('\n\n').map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+            
+            {isHtmlContent ? (
+              <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+            ) : (
+              blog.content.split('\n\n').map((paragraph: string, index: number) => (
+                <p key={index} className="mb-4">{paragraph}</p>
+              ))
+            )}
           </div>
         </div>
       </article>
