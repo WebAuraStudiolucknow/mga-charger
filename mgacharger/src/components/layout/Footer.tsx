@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { Mail, MapPin, Phone, ShieldCheck, ExternalLink } from "lucide-react";
 
 export function Footer() {
   return (
@@ -32,9 +32,32 @@ export function Footer() {
               </div>
               <div className="flex items-center hover:text-white transition-colors">
                 <Mail className="w-4 h-4 text-accent mr-3 shrink-0" />
-                <a href="mailto:mgacharger@yahoo.com">mgacharger@yahoo.com</a>
+                <a href="mailto:info@mgacharger.com">info@mgacharger.com</a>
               </div>
             </div>
+          </div>
+
+          {/* Official Department Emails */}
+          <div>
+            <h4 className="text-base font-bold text-white mb-5 uppercase tracking-wider text-xs">Official Emails</h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
+              <li className="flex items-center">
+                <span className="font-semibold text-white mr-1.5">Info:</span>
+                <a href="mailto:info@mgacharger.com" className="hover:text-accent-light transition-colors">info@mgacharger.com</a>
+              </li>
+              <li className="flex items-center">
+                <span className="font-semibold text-white mr-1.5">Enquiry:</span>
+                <a href="mailto:enquiry@mgacharger.com" className="hover:text-accent-light transition-colors">enquiry@mgacharger.com</a>
+              </li>
+              <li className="flex items-center">
+                <span className="font-semibold text-white mr-1.5">Warranty:</span>
+                <a href="mailto:warranty@mgacharger.com" className="hover:text-accent-light transition-colors">warranty@mgacharger.com</a>
+              </li>
+              <li className="flex items-center">
+                <span className="font-semibold text-white mr-1.5">Contact:</span>
+                <a href="mailto:contact@mgacharger.com" className="hover:text-accent-light transition-colors">contact@mgacharger.com</a>
+              </li>
+            </ul>
           </div>
 
           {/* Navigation */}
@@ -49,18 +72,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Product Categories */}
-          <div>
-            <h4 className="text-base font-bold text-white mb-5 uppercase tracking-wider text-xs">Categories</h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
-              <li><Link href="/products?category=automotive" className="hover:text-accent-light transition-colors">Automotive Chargers</Link></li>
-              <li><Link href="/products?category=industrial" className="hover:text-accent-light transition-colors">Industrial Chargers</Link></li>
-              <li><Link href="/products?category=ev" className="hover:text-accent-light transition-colors">EV Battery Chargers</Link></li>
-              <li><Link href="/products?category=inverter" className="hover:text-accent-light transition-colors">BIG BOSS Boosters</Link></li>
-              <li><Link href="/products?category=testing" className="hover:text-accent-light transition-colors">Digital Testers</Link></li>
-            </ul>
-          </div>
-
           {/* Quick Links */}
           <div>
             <h4 className="text-base font-bold text-white mb-5 uppercase tracking-wider text-xs">Quick Links</h4>
@@ -68,8 +79,17 @@ export function Footer() {
               <li><Link href="/warranty" className="hover:text-accent-light transition-colors">Warranty Claim & Reg.</Link></li>
               <li><Link href="/brochure" className="hover:text-accent-light transition-colors">Download Brochure</Link></li>
               <li><Link href="/contact-us" className="hover:text-accent-light transition-colors">Contact Sales</Link></li>
-              <li><Link href="#" className="hover:text-accent-light transition-colors">Privacy Policy</Link></li>
-              <li><Link href="#" className="hover:text-accent-light transition-colors">Terms of Service</Link></li>
+              <li>
+                <a 
+                  href="https://s3744.bom1.stableserver.net:2096/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-accent-light hover:underline font-semibold flex items-center"
+                >
+                  Mail Login (Webmail)
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </li>
             </ul>
           </div>
 

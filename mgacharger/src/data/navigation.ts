@@ -31,6 +31,10 @@ export const navigation = [
   {
     label: "Contact Us",
     href: "/contact-us",
+    subMenu: [
+      { label: "Contact Us", href: "/contact-us" },
+      { label: "Mail Login", href: "https://s3744.bom1.stableserver.net:2096/", external: true },
+    ]
   },
 ];
 

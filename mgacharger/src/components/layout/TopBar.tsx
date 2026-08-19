@@ -1,4 +1,4 @@
-import { Mail, Phone, Clock } from "lucide-react";
+import { Mail, Phone, Clock, ExternalLink } from "lucide-react";
 
 export function TopBar() {
   return (
@@ -27,8 +27,18 @@ export function TopBar() {
           </div>
           <div className="flex items-center hover:text-white transition-colors">
             <Mail className="w-3.5 h-3.5 mr-1.5 opacity-80" />
-            <a href="mailto:mgacharger@yahoo.com">mgacharger@yahoo.com</a>
+            <a href="mailto:info@mgacharger.com">info@mgacharger.com</a>
           </div>
+          <span className="opacity-40">|</span>
+          <a 
+            href="https://s3744.bom1.stableserver.net:2096/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-accent-light font-semibold hover:underline flex items-center"
+          >
+            Mail Login
+            <ExternalLink className="w-3 h-3 ml-1" />
+          </a>
         </div>
       </div>
     </div>
