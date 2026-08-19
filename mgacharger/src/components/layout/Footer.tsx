@@ -32,7 +32,7 @@ export function Footer() {
               </div>
               <div className="flex items-center hover:text-white transition-colors">
                 <Mail className="w-4 h-4 text-accent mr-3 shrink-0" />
-                <a href="mailto:info@mgacharger.com">info@mgacharger.com</a>
+                <a href="mailto:contact@mgacharger.com">contact@mgacharger.com</a>
               </div>
             </div>
           </div>
@@ -42,20 +42,20 @@ export function Footer() {
             <h4 className="text-base font-bold text-white mb-5 uppercase tracking-wider text-xs">Official Emails</h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
               <li className="flex items-center">
-                <span className="font-semibold text-white mr-1.5">Info:</span>
-                <a href="mailto:info@mgacharger.com" className="hover:text-accent-light transition-colors">info@mgacharger.com</a>
+                <span className="font-semibold text-white mr-1.5">Contact:</span>
+                <a href="mailto:contact@mgacharger.com" className="hover:text-accent-light transition-colors">contact@mgacharger.com</a>
               </li>
               <li className="flex items-center">
                 <span className="font-semibold text-white mr-1.5">Enquiry:</span>
                 <a href="mailto:enquiry@mgacharger.com" className="hover:text-accent-light transition-colors">enquiry@mgacharger.com</a>
               </li>
               <li className="flex items-center">
-                <span className="font-semibold text-white mr-1.5">Warranty:</span>
-                <a href="mailto:warranty@mgacharger.com" className="hover:text-accent-light transition-colors">warranty@mgacharger.com</a>
+                <span className="font-semibold text-white mr-1.5">Info:</span>
+                <a href="mailto:info@mgacharger.com" className="hover:text-accent-light transition-colors">info@mgacharger.com</a>
               </li>
               <li className="flex items-center">
-                <span className="font-semibold text-white mr-1.5">Contact:</span>
-                <a href="mailto:contact@mgacharger.com" className="hover:text-accent-light transition-colors">contact@mgacharger.com</a>
+                <span className="font-semibold text-white mr-1.5">Warranty:</span>
+                <a href="mailto:warranty@mgacharger.com" className="hover:text-accent-light transition-colors">warranty@mgacharger.com</a>
               </li>
             </ul>
           </div>

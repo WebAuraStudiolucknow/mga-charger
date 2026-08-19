@@ -27,7 +27,7 @@ export function TopBar() {
           </div>
           <div className="flex items-center hover:text-white transition-colors">
             <Mail className="w-3 h-3 mr-1.5 opacity-80" />
-            <a href="mailto:info@mgacharger.com">info@mgacharger.com</a>
+            <a href="mailto:contact@mgacharger.com">contact@mgacharger.com</a>
           </div>
           <span className="opacity-40">|</span>
           <a 

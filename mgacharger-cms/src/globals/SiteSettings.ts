@@ -25,7 +25,7 @@ export const SiteSettings: GlobalConfig = {
       name: 'email',
       type: 'email',
       required: true,
-      defaultValue: 'mgacharger@yahoo.com',
+      defaultValue: 'contact@mgacharger.com',
       label: 'Support / Sales Email',
     },
     {
