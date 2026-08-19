@@ -24,8 +24,8 @@ export function GalleryGrid({ initialItems = [] }: Props) {
 
   const categories = ["All", ...Array.from(new Set(initialItems.map((item) => item.category || "Manufacturing")))];
 
-  const filteredGallery = activeCategory === "All" 
-    ? initialItems 
+  const filteredGallery = activeCategory === "All"
+    ? initialItems
     : initialItems.filter(img => img.category === activeCategory);
 
   const openLightbox = (index: number) => {
@@ -102,28 +102,35 @@ export function GalleryGrid({ initialItems = [] }: Props) {
       </div>
 
       {/* Responsive Gallery Image Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
         {filteredGallery.map((img, index) => (
-          <div 
-            key={img.id || index} 
-            className="group relative aspect-square rounded-lg overflow-hidden bg-secondary-bg cursor-pointer border border-border hover:border-accent transition-all duration-300 hover:shadow-lg"
+          <div
+            key={img.id || index}
+            className="group relative aspect-square rounded-2xl overflow-hidden bg-white cursor-pointer border border-border/80 p-5 sm:p-6 hover:border-accent transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col items-center justify-center"
             onClick={() => openLightbox(index)}
           >
-            <Image
-              src={img.src}
-              alt={img.title}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-            />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
-              <ZoomIn className="w-8 h-8 text-white mb-2 transform scale-50 group-hover:scale-100 transition-transform duration-300" />
-              <div className="text-white font-medium text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 line-clamp-2">
+            {/* Image Container with Padding */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              <Image
+                src={img.src}
+                alt={img.title}
+                fill
+                className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+              />
+            </div>
+
+            {/* Hover Overlay */}
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center backdrop-blur-[2px] rounded-2xl">
+              <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-3 transform scale-75 group-hover:scale-100 transition-transform duration-300 border border-white/30">
+                <ZoomIn className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-white font-semibold text-sm sm:text-base line-clamp-2 leading-snug mb-2">
                 {img.title}
               </div>
-              <div className="text-white/80 text-xs font-medium uppercase tracking-wider mt-1">
+              <span className="text-[11px] font-bold text-white/90 uppercase tracking-wider bg-accent/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
                 {img.category}
-              </div>
+              </span>
             </div>
           </div>
         ))}
@@ -137,7 +144,7 @@ export function GalleryGrid({ initialItems = [] }: Props) {
 
       {/* Fullscreen Lightbox Modal with Zoom & Pan Controls */}
       {currentItem && (
-        <div 
+        <div
           className="fixed inset-0 z-[99999] bg-black/95 flex flex-col items-center justify-between backdrop-blur-md animate-in fade-in duration-200"
           onClick={closeLightbox}
         >
@@ -209,7 +216,7 @@ export function GalleryGrid({ initialItems = [] }: Props) {
 
           {/* Main Interactive Zoomable Image Stage */}
           <div className="relative flex-1 w-full flex items-center justify-center overflow-hidden p-4" onClick={(e) => e.stopPropagation()}>
-            <div 
+            <div
               style={{
                 transform: `scale(${zoomLevel}) rotate(${rotation}deg)`,
                 transition: 'transform 0.25s ease-out',
@@ -230,7 +237,7 @@ export function GalleryGrid({ initialItems = [] }: Props) {
           </div>
 
           {/* Navigation Controls */}
-          <button 
+          <button
             type="button"
             className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-colors border border-white/20 shadow-lg z-20"
             onClick={handlePrev}
@@ -238,8 +245,8 @@ export function GalleryGrid({ initialItems = [] }: Props) {
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
-          
-          <button 
+
+          <button
             type="button"
             className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-colors border border-white/20 shadow-lg z-20"
             onClick={handleNext}

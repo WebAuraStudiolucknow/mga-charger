@@ -23,10 +23,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     startLoading();
-    setTimeout(() => {
-      router.push(`/products/${product.slug}`);
-      setTimeout(() => stopLoading(), 300);
-    }, 450);
+    router.push(`/products/${product.slug}`);
   };
 
   return (

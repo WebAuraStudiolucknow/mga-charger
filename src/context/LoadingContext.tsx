@@ -1,7 +1,7 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
-import Image from "next/image";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import { Zap, ShieldCheck } from "lucide-react";
 
 interface LoadingContextType {
@@ -20,15 +20,21 @@ export const useLoading = () => useContext(LoadingContext);
 
 export function LoadingProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
+  const pathname = usePathname();
 
   const startLoading = () => setIsLoading(true);
   const stopLoading = () => setIsLoading(false);
+
+  // Automatically dismiss loading screen once route transition completes
+  useEffect(() => {
+    setIsLoading(false);
+  }, [pathname]);
 
   return (
     <LoadingContext.Provider value={{ isLoading, startLoading, stopLoading }}>
       {children}
 
-      {/* Unique Custom Energy Voltage Wave Loader (NO CIRCULAR SPINNER!) */}
+      {/* Unique Custom Energy Voltage Wave Loader */}
       {isLoading && (
         <div className="fixed inset-0 z-[9999] bg-slate-950/90 backdrop-blur-xl flex flex-col items-center justify-center text-white animate-in fade-in duration-300">
           
@@ -42,7 +48,7 @@ export function LoadingProvider({ children }: { children: ReactNode }) {
             </div>
           </div>
 
-          {/* High-Tech Voltage Energy Bar Equalizer (NO SPINNER!) */}
+          {/* High-Tech Voltage Energy Bar Equalizer */}
           <div className="flex items-center space-x-2 mb-6">
             <div className="w-2.5 bg-accent h-6 rounded-full animate-[bounce_1s_infinite_100ms]"></div>
             <div className="w-2.5 bg-accent-light h-10 rounded-full animate-[bounce_1s_infinite_200ms]"></div>
