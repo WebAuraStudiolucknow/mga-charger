@@ -24,7 +24,7 @@ export function ContactForm() {
         phone: data.phone,
         requirement: data.requirement,
         message: data.message,
-        status: "new",
+        status: "NEW",
       });
 
       if (!response.success) {

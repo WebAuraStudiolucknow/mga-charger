@@ -31,10 +31,10 @@ export async function GET() {
       payloadInstance.count({ collection: 'news', where: { status: { equals: 'published' } } }),
       payloadInstance.count({ collection: 'news', where: { status: { equals: 'draft' } } }),
       payloadInstance.count({ collection: 'enquiries' }),
-      payloadInstance.count({ collection: 'enquiries', where: { status: { equals: 'new' } } }),
+      payloadInstance.count({ collection: 'enquiries', where: { status: { equals: 'NEW' } } }),
       payloadInstance.count({ collection: 'warranty-registrations' }),
-      payloadInstance.count({ collection: 'warranty-registrations', where: { status: { equals: 'approved' } } }),
-      payloadInstance.count({ collection: 'warranty-registrations', where: { status: { equals: 'pending' } } }),
+      payloadInstance.count({ collection: 'warranty-registrations', where: { status: { equals: 'APPROVED' } } }),
+      payloadInstance.count({ collection: 'warranty-registrations', where: { status: { equals: 'NEW' } } }),
       payloadInstance.count({ collection: 'gallery' }),
     ])
 

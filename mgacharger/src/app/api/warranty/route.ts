@@ -41,7 +41,7 @@ export async function POST(request: Request) {
       invoiceNumber,
       dealerName: dealerName || "",
       issueDescription: issueDescription || "",
-      status: "pending",
+      status: "NEW",
     });
 
     return NextResponse.json({
