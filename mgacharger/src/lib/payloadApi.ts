@@ -22,7 +22,7 @@ async function fetchPayloadData<T>(endpoint: string, options?: RequestInit): Pro
   try {
     const url = `${PAYLOAD_API_URL}${endpoint.startsWith('/') ? endpoint : `/${endpoint}`}`;
     const res = await fetch(url, {
-      next: { revalidate: 60 },
+      cache: 'no-store',
       ...options,
       headers: {
         'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ export async function getProducts(params?: { category?: string; featured?: boole
   const queryString = queryParts.length > 0 ? `?${queryParts.join('&')}` : '';
   const result = await fetchPayloadData<{ docs: any[] }>(`/products${queryString}`);
 
-  if (result && Array.isArray(result.docs) && result.docs.length > 0) {
+  if (result && Array.isArray(result.docs)) {
     return result.docs.map((doc) => ({
       id: String(doc.id),
       name: doc.name,
@@ -87,7 +87,7 @@ export async function getProducts(params?: { category?: string; featured?: boole
     }));
   }
 
-  // Fallback to static products if CMS is offline or empty
+  // Use local data only when the CMS request itself failed.
   let filtered = [...staticProducts];
   if (params?.category && params.category !== 'all') {
     filtered = filtered.filter((p) => p.category === params.category);
@@ -117,6 +117,10 @@ export async function getProductBySlug(slug: string): Promise<any | null> {
       features: (doc.features || []).map((f: any) => f.feature || f),
       featured: Boolean(doc.featured),
     };
+  }
+
+  if (result && Array.isArray(result.docs)) {
+    return null;
   }
 
   return staticProducts.find((p) => p.slug === slug) || null;
