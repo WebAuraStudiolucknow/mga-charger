@@ -18,8 +18,16 @@ import { Testimonials } from './collections/Testimonials'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+const defaultOrigins = ['http://localhost:3000', 'https://mga-charger.vercel.app']
+const configuredOrigins = (process.env.CORS_ORIGINS || '')
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean)
+const allowedOrigins = [...new Set([...defaultOrigins, ...configuredOrigins])]
 
 export default buildConfig({
+  cors: allowedOrigins,
+  csrf: allowedOrigins,
   admin: {
     user: Users.slug,
     importMap: {
